@@ -66,16 +66,21 @@ sudo apt-get install git
 # Download Hyperledger Fabric binary
 sudo curl -sSL http://bit.ly/2ysbOFE | sudo bash -s -- 1.4.2 1.4.2 0.4.20
 # add path
-
-echo "Add this to ~/.profile"
+echo
+echo "Add this to ~/.profile:"
 
 echo "export PATH=/home/david/fabric-samples/bin:\$PATH"
 echo "export GOROOT=/usr/local/go"
 echo "export GOPATH=\$HOME/blockbench"
 echo "export PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH"
 
-
+echo
+echo "update environment variables with:"
 echo "source ~/.profile"
+echo
+echo "give docker sudo:"
+echo "sudo usermod -aG docker \${USER}"
+echo "su - \${USER}"
 
 
 

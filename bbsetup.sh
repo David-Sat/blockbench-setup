@@ -1,12 +1,12 @@
 #!/bin/bash  
-
+cd ~
 INSTALL_DIR=$HOME
 
 # Git clone benchmark
 if [ ! -d $HOME/blockbench ]; then
     git clone https://github.com/ooibc88/blockbench.git
 fi
-
+cd ~
 
 # install c++ libraries
 sudo apt-get update

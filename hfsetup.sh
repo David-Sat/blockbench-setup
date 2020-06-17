@@ -40,9 +40,6 @@ sudo apt-get install docker-ce
 sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 
-# Execute Docker without sudo
-sudo usermod -aG docker ${USER}
-su - ${USER}
 
 # Allow binary
 sudo chmod +x /usr/local/bin/docker-compose

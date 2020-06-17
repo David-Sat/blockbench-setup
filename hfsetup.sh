@@ -18,7 +18,7 @@ npm install npm@latest -g
 
 
 sudo apt-get update
-#sudo apt upgrade -y
+sudo apt upgrade -y
 
 
 

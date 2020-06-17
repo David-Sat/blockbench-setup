@@ -18,6 +18,9 @@ sudo apt-get -y install libtool
 sudo apt-get -y install libcurl4-openssl-dev
 sudo apt-get -y install build-essential
 
+sudo apt-get install autotools-dev
+sudo apt-get install libtool m4 automake
+
 sudo apt-get -y install cmake # unsure if needed
 
 sudo npm install --g lerna
@@ -32,8 +35,8 @@ else
 fi
 
 
-./autogen.sh
-./configure
+sudo ./autogen.sh
+sudo ./configure
 sudo make install
 
 
@@ -47,17 +50,39 @@ npm install fabric-ca-client
 npm install fabric-network
 cd ~
 
+cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
+npm install web3
+npm install zipfian
+npm install bignumber.js
+npm install fabric-client
+npm install fabric-ca-client
+npm install fabric-network
+cd ~
+
+cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
+npm install web3
+npm install zipfian
+npm install bignumber.js
+npm install fabric-client
+npm install fabric-ca-client
+npm install fabric-network
+cd ~
 
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger
 chmod +x install.sh
 ./install.sh
 
+cd ~
+sudo chmod -R a+rwx ~/blockbench
+
 
 # Make drivers
 
-echo "cd ~/blockbench/src/macro/kvstore | make"
+cd ~/blockbench/src/macro/kvstore
+make
 
-
+cd ~/blockbench/src/macro/smallbank 
+make
 
 

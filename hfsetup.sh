@@ -59,8 +59,6 @@ cd ~
 echo -------7-------
 
 
-# Install git
-sudo apt-get install git
 
 
 # Download Hyperledger Fabric binary

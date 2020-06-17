@@ -1,8 +1,10 @@
 #!/bin/bash
 
+echo -------1-------
 sudo apt-get update
+echo -------2-------
 sudo apt upgrade -y
-
+echo -------3-------
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \

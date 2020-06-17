@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
+sudo apt upgrade -y
 
 sudo apt-get install \
     apt-transport-https \
@@ -17,8 +18,6 @@ sudo apt-get install -y nodejs
 npm install npm@latest -g
 
 
-sudo apt-get update
-sudo apt upgrade -y
 
 
 

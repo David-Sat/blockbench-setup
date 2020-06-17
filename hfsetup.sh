@@ -12,8 +12,8 @@ sudo apt-get install \
     software-properties-common \
     python
 
+echo -------4-------
 # Install npm and node js
-
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 #npm install npm@5.6.0 -g
@@ -22,7 +22,7 @@ npm install npm@latest -g
 
 
 
-
+echo -------5-------
 # Add docker official PGP key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -48,7 +48,7 @@ su - ${USER}
 sudo chmod +x /usr/local/bin/docker-compose
 
 #test: docker-composer -v && docker -v
-
+echo -------6-------
 # Install golang
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -59,7 +59,7 @@ sudo mv go /usr/local
 # Needs new environment variables for Go in ~/.profile
 cd ~
 
-
+echo -------7-------
 
 
 # Install git

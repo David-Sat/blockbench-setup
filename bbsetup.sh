@@ -2,11 +2,13 @@
 cd ~
 INSTALL_DIR=$HOME
 
+
 # Git clone benchmark
 if [ ! -d $HOME/blockbench ]; then
     git clone https://github.com/ooibc88/blockbench.git
 fi
 cd ~
+sudo chown -R $USER:$USER blockbench/
 
 # install c++ libraries
 sudo apt-get update
@@ -30,9 +32,10 @@ sudo npm install --g lerna
 
 if [ ! -d $HOME/restclient-cpp/ ]; then
     git clone https://github.com/mrtazz/restclient-cpp.git
-else 
-    cd restclient-cpp
 fi
+cd ~
+sudo chown -R $USER:$USER restclient-cpp/
+cd restclient-cpp
 
 
 sudo ./autogen.sh
@@ -79,10 +82,10 @@ sudo chmod -R a+rwx ~/blockbench
 
 # Make drivers
 
-cd ~/blockbench/src/macro/kvstore
-make
+#cd ~/blockbench/src/macro/kvstore
+#make
 
-cd ~/blockbench/src/macro/smallbank 
-make
+#cd ~/blockbench/src/macro/smallbank 
+#make
 
 

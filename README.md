@@ -2,11 +2,11 @@
 
 ## Install Hyperledger Fabric 1.4
 
-follow instructions in blockbench-setup/hfsetup/README.md
+follow instructions in [blockbench-setup/hfsetup/README.md](hfsetup/README.md)
 
 ## Install BlockBench with Dependencies
 
-follow instructions in blockbench-setup/bbsetup/README.md
+follow instructions in [blockbench-setup/bbsetup/README.md](bbsetup/README.md)
 
 ## Start BlockBench Benchmark
 

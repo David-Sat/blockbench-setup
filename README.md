@@ -10,4 +10,4 @@ follow instructions in blockbench-setup/bbsetup/README.md
 
 ## Start BlockBench Benchmark
 
-follow instructions in blockbench-setup/benchmark/README.md
+follow instructions in [blockbench-setup/benchmark/README.md](benchmark/README.md)

@@ -70,7 +70,7 @@ sudo chown -R $USER:$USER fabric-samples/
 echo
 echo "Add this to ~/.profile:"
 
-echo "export PATH=/home/david/fabric-samples/bin:\$PATH"
+echo "export PATH=\$HOME/fabric-samples/bin:\$PATH"
 echo "export GOROOT=/usr/local/go"
 echo "export GOPATH=\$HOME/blockbench"
 echo "export PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH"

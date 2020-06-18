@@ -79,9 +79,11 @@ chmod +x install.sh
 cd ~
 sudo chmod -R a+rwx ~/blockbench
 
-echo fix permissions (ls -la ~):
-echo sudo chown -R \$USER:\$USER blockbench/
-echo sudo chown -R \$USER:\$USER restclient-cpp/
+echo You might need to fix folder permissions:
+echo "ls -la ~"
+echo "sudo chown -R \$USER:\$USER blockbench/"
+echo "sudo chown -R \$USER:\$USER restclient-cpp/"
+echo "ls -la ~"
 
 
 # Make drivers

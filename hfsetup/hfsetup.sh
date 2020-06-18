@@ -63,7 +63,7 @@ echo -------7-------
 
 # Download Hyperledger Fabric binary
 sudo curl -sSL http://bit.ly/2ysbOFE | sudo bash -s -- 1.4.2 1.4.2 0.4.20
-
+cd ~
 sudo chown -R $USER:$USER fabric-samples/
 
 # add path
@@ -82,7 +82,9 @@ echo
 echo "give docker sudo:"
 echo "sudo usermod -aG docker \${USER}"
 echo "su - \${USER}"
-
+echo
+echo "In case of missing permissions:"
+echo "sudo chown -R \$USER:\$USER fabric-samples/"
 
 
 

@@ -1,14 +1,14 @@
 #!/bin/bash  
 cd ~
 INSTALL_DIR=$HOME
-
+user=$(logname)
 
 # Git clone benchmark
 if [ ! -d $HOME/blockbench ]; then
     git clone https://github.com/ooibc88/blockbench.git
 fi
 cd ~
-sudo chown -R $USER:$USER blockbench/
+sudo chown -R $user:$user blockbench/
 
 # install c++ libraries
 sudo apt-get update
@@ -34,7 +34,7 @@ if [ ! -d $HOME/restclient-cpp/ ]; then
     git clone https://github.com/mrtazz/restclient-cpp.git
 fi
 cd ~
-sudo chown -R $USER:$USER restclient-cpp/
+sudo chown -R $user:$user restclient-cpp/
 cd restclient-cpp
 
 
@@ -48,8 +48,8 @@ cd ~/blockbench/src/micro
 npm install web3
 npm install zipfian
 npm install bignumber.js
-npm install fabric-client
 npm install fabric-ca-client
+npm install fabric-client
 npm install fabric-network
 cd ~
 
@@ -57,8 +57,8 @@ cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
 npm install web3
 npm install zipfian
 npm install bignumber.js
-npm install fabric-client
 npm install fabric-ca-client
+npm install fabric-client
 npm install fabric-network
 cd ~
 
@@ -66,8 +66,8 @@ cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
 npm install web3
 npm install zipfian
 npm install bignumber.js
-npm install fabric-client
 npm install fabric-ca-client
+npm install fabric-client
 npm install fabric-network
 cd ~
 

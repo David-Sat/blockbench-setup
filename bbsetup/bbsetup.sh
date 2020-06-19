@@ -42,6 +42,10 @@ sudo ./autogen.sh
 sudo ./configure
 sudo make install
 
+cd ~
+sudo chown -R $user:$user /home/david/.config
+sudo chown -R $user:$user /usr/lib/node_modules
+
 
 # Node.js libraries
 cd ~/blockbench/src/micro

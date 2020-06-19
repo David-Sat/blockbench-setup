@@ -1,4 +1,4 @@
-# BlockBench Setup for Ubuntu 16.04
+# Unofficial BlockBench Setup for Ubuntu 16.04
 
 ## Install Hyperledger Fabric 1.4
 

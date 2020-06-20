@@ -63,7 +63,7 @@ cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
 #npm install bignumber.js
 npm install fabric-ca-client
 npm install fabric-client
-npm install fabric-network
+#npm install fabric-network
 cd ~
 
 cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
@@ -72,7 +72,7 @@ cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
 #npm install bignumber.js
 npm install fabric-ca-client
 npm install fabric-client
-npm install fabric-network
+#npm install fabric-network
 cd ~
 
 # Install Hyperledger

@@ -69,13 +69,21 @@ cd ~
 #npm install fabric-client
 #cd ~
 
+cd ~
+sudo chmod -R a+rwx ~/blockbench
+
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger
 chmod +x install.sh
 ./install.sh
 
-cd ~
-sudo chmod -R a+rwx ~/blockbench
+# Make drivers
+cd ~/blockbench/src/macro/kvstore
+make
+
+cd ~/blockbench/src/macro/smallbank 
+make
+
 
 echo You might need to fix folder permissions:
 echo "ls -la ~"
@@ -84,12 +92,8 @@ echo "sudo chown -R \$USER:\$USER restclient-cpp/"
 echo "ls -la ~"
 
 
-# Make drivers
 
-cd ~/blockbench/src/macro/kvstore
-make
 
-cd ~/blockbench/src/macro/smallbank 
-make
+
 
 

@@ -16,7 +16,7 @@ sudo apt-get install \
 
 echo -------4-------
 # Install npm and node js
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 #npm install npm@5.6.0 -g
 npm install npm@latest -g
@@ -26,7 +26,7 @@ npm install npm@latest -g
 
 echo -------5-------
 # Add docker official PGP key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Add docker repository
 sudo add-apt-repository \
@@ -39,7 +39,7 @@ sudo apt-get update
 sudo apt-get install docker-ce
 
 # Install docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.26.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
 
 

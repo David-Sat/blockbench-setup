@@ -19,7 +19,8 @@ echo -------4-------
 sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 #npm install npm@5.6.0 -g
-npm install npm@latest -g
+sudo apt-get install npm
+#npm install npm@latest -g
 
 
 

@@ -27,7 +27,7 @@ sudo apt-get install npm
 
 echo -------5-------
 # Add docker official PGP key
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Add docker repository
 sudo add-apt-repository \
@@ -37,7 +37,12 @@ sudo add-apt-repository \
 
 # Update and install docker
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install -y docker-ce
+
+sudo usermod -aG docker ${USER}
+su - ${USER}
+
+cd ~
 
 # Install docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose

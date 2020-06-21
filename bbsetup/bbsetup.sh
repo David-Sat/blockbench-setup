@@ -49,31 +49,25 @@ sudo chown -R $user:$user /usr/lib/node_modules
 
 # Node.js libraries
 cd ~/blockbench/src/micro
-npm install web3
-npm install zipfian
-npm install bignumber.js
-npm install fabric-ca-client
-npm install fabric-client
-npm install fabric-network
-cd ~
-
-cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
 #npm install web3
 #npm install zipfian
 #npm install bignumber.js
-npm install fabric-ca-client
-npm install fabric-client
+#npm install fabric-ca-client
+#npm install fabric-client
 #npm install fabric-network
+
+npm install
 cd ~
 
-cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
-#npm install web3
-#npm install zipfian
-#npm install bignumber.js
-npm install fabric-ca-client
-npm install fabric-client
-#npm install fabric-network
-cd ~
+#cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
+#npm install fabric-ca-client
+#npm install fabric-client
+#cd ~
+
+#cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
+#npm install fabric-ca-client
+#npm install fabric-client
+#cd ~
 
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger
@@ -92,10 +86,10 @@ echo "ls -la ~"
 
 # Make drivers
 
-#cd ~/blockbench/src/macro/kvstore
-#make
+cd ~/blockbench/src/macro/kvstore
+make
 
-#cd ~/blockbench/src/macro/smallbank 
-#make
+cd ~/blockbench/src/macro/smallbank 
+make
 
 

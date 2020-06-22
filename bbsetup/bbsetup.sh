@@ -38,6 +38,7 @@ cd ~
 cd restclient-cpp
 
 # removed sudo
+chmod 755 ~/restclient-cpp
 ./autogen.sh
 ./configure
 make install

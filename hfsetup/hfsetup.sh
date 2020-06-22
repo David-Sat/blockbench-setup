@@ -36,7 +36,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 echo -------docker install-------
 # Update and install docker
 sudo apt-get update
-apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 
 #echo -------docker sudo permissions-------

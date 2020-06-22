@@ -3,13 +3,17 @@ cd ~
 INSTALL_DIR=$HOME
 user=$(logname)
 
+echo -------clone benchmark-------
 # Git clone benchmark
 if [ ! -d $HOME/blockbench ]; then
     git clone https://github.com/ooibc88/blockbench.git
 fi
 cd ~
-sudo chown -R $user:$user blockbench/
+echo -------blockbench folder permissions-------
+chmod 755 ~/blockbench
+#sudo chown -R $user:$user blockbench/
 
+echo -------install c++ libraries-------
 # install c++ libraries
 sudo apt-get update
 sudo apt-get -y dist-upgrade
@@ -28,8 +32,8 @@ sudo apt-get -y install cmake # unsure if needed
 sudo npm install --g lerna
 
 
+echo -------clone restclient-------
 # restclient install
-
 if [ ! -d $HOME/restclient-cpp/ ]; then
     git clone https://github.com/mrtazz/restclient-cpp.git
 fi
@@ -37,6 +41,7 @@ cd ~
 #sudo chown -R $user:$user restclient-cpp/
 cd restclient-cpp
 
+echo -------restclient make install-------
 # removed sudo
 chmod 755 ~/restclient-cpp
 ./autogen.sh
@@ -47,7 +52,7 @@ cd ~
 #sudo chown -R $user:$user /home/$user/.config
 #sudo chown -R $user:$user /usr/lib/node_modules
 
-
+echo -------micro npm installs-------
 # Node.js libraries
 cd ~/blockbench/src/micro
 npm install web3
@@ -60,11 +65,12 @@ npm install bignumber.js
 npm install
 cd ~
 
+echo -------macro npm installs-------
 cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
 npm install fabric-ca-client
 npm install fabric-client
-npm install
-npm audit fix
+npm install 
+# -- audit
 #cd ~
 
 #cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
@@ -74,13 +80,14 @@ npm audit fix
 
 cd ~
 #sudo chmod -R a+rwx ~/blockbench
-chmod 755 ~/blockbench
 
+echo -------hyperledger install-------
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger
 chmod +x install.sh
 ./install.sh
 
+echo -------make drivers-------
 # Make drivers
 cd ~/blockbench/src/macro/kvstore
 make

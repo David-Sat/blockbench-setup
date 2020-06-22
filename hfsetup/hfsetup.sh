@@ -44,6 +44,9 @@ sudo apt-get install -y docker-ce
 #echo -------docker sudo permissions-------
 #sudo usermod -aG docker ${USER}
 #su - ${USER}
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 cd ~
 

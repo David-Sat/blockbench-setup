@@ -2,7 +2,7 @@
 ## Execute Installation Script
 ```
 chmod +x bbsetup.sh
-sudo ./bbsetup.sh
+./bbsetup.sh
 ```
 
 ### Fix missing folder permissions
@@ -10,14 +10,14 @@ Check permissions:
 ```
 ls -la ~
 ```
-Give permissions:
+Give permissions if needed:
 ```
 sudo chown -R $USER:$USER blockbench/
 sudo chown -R $USER:$USER restclient-cpp/
 ls -la ~
 ```
 
-## Make Drivers
+## Make Drivers if it failed during script
 ```
 cd ~/blockbench/src/macro/kvstore
 make

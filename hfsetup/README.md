@@ -2,7 +2,7 @@
 ## Execute Installation Script
 ```
 chmod +x hfsetup.sh
-sudo ./hfsetup.sh
+./hfsetup.sh
 ```
 ### Add Environment Variables
 

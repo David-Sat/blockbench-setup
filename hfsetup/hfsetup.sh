@@ -42,9 +42,7 @@ sudo apt-get install -y docker-ce
 #echo -------docker sudo permissions-------
 #sudo usermod -aG docker ${USER}
 #su - ${USER}
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+
 
 cd ~
 
@@ -100,6 +98,7 @@ echo
 echo "give docker sudo:"
 echo "sudo usermod -aG docker \${USER}"
 echo "su - \${USER}"
+
 echo
 echo "In case of missing permissions:"
 echo "sudo chown -R \$USER:\$USER fabric-samples/"

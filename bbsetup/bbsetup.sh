@@ -49,9 +49,9 @@ sudo chown -R $user:$user /usr/lib/node_modules
 
 # Node.js libraries
 cd ~/blockbench/src/micro
-#npm install web3
-#npm install zipfian
-#npm install bignumber.js
+npm install web3
+npm install zipfian
+npm install bignumber.js
 #npm install fabric-ca-client
 #npm install fabric-client
 #npm install fabric-network
@@ -59,9 +59,11 @@ cd ~/blockbench/src/micro
 npm install
 cd ~
 
-#cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
-#npm install fabric-ca-client
-#npm install fabric-client
+cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
+npm install fabric-ca-client
+npm install fabric-client
+npm install
+npm audit fix
 #cd ~
 
 #cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node

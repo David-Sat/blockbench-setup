@@ -41,8 +41,8 @@ echo -------docker install-------
 sudo apt-get update
 sudo apt-get install -y docker-ce
 
-echo -------docker sudo permissions-------
-sudo usermod -aG docker ${USER}
+#echo -------docker sudo permissions-------
+#sudo usermod -aG docker ${USER}
 #su - ${USER}
 
 cd ~
@@ -64,6 +64,7 @@ echo -------install golang-------
 cd /tmp
 wget https://dl.google.com/go/go1.12.17.linux-amd64.tar.gz
 sudo tar -xvf go1.12.17.linux-amd64.tar.gz
+sudo chown -R root:root ./go
 sudo mv go /usr/local
 # Needs new environment variables for Go in ~/.profile
 cd ~
@@ -80,10 +81,14 @@ sudo chown -R $user:$user fabric-samples/
 echo
 echo "Add this to ~/.profile:"
 
+#echo "export PATH=\$HOME/fabric-samples/bin:\$PATH"
+#echo "export GOROOT=/usr/local/go"
+#echo "export GOPATH=\$HOME/blockbench"
+#echo "export PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH"
+echo
 echo "export PATH=\$HOME/fabric-samples/bin:\$PATH"
-echo "export GOROOT=/usr/local/go"
 echo "export GOPATH=\$HOME/blockbench"
-echo "export PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH"
+echo "export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin"
 
 echo
 echo "update environment variables with:"

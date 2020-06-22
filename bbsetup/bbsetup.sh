@@ -84,8 +84,9 @@ make
 cd ~/blockbench/src/macro/smallbank 
 make
 
-
-echo You might need to fix folder permissions:
+echo 
+echo "You might need to fix folder permissions:"
+echo
 echo "ls -la ~"
 echo "sudo chown -R \$USER:\$USER blockbench/"
 echo "sudo chown -R \$USER:\$USER restclient-cpp/"

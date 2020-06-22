@@ -43,7 +43,7 @@ sudo apt-get install -y docker-ce
 
 echo -------docker sudo permissions-------
 sudo usermod -aG docker ${USER}
-su - ${USER}
+#su - ${USER}
 
 cd ~
 

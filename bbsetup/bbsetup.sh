@@ -34,17 +34,17 @@ if [ ! -d $HOME/restclient-cpp/ ]; then
     git clone https://github.com/mrtazz/restclient-cpp.git
 fi
 cd ~
-sudo chown -R $user:$user restclient-cpp/
+#sudo chown -R $user:$user restclient-cpp/
 cd restclient-cpp
 
-
-sudo ./autogen.sh
-sudo ./configure
-sudo make install
+# removed sudo
+./autogen.sh
+./configure
+make install
 
 cd ~
-sudo chown -R $user:$user /home/$user/.config
-sudo chown -R $user:$user /usr/lib/node_modules
+#sudo chown -R $user:$user /home/$user/.config
+#sudo chown -R $user:$user /usr/lib/node_modules
 
 
 # Node.js libraries
@@ -72,7 +72,8 @@ npm audit fix
 #cd ~
 
 cd ~
-sudo chmod -R a+rwx ~/blockbench
+#sudo chmod -R a+rwx ~/blockbench
+chmod 755 ~/blockbench
 
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger

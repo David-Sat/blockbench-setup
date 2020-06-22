@@ -2,12 +2,12 @@
 
 user=$(logname)
 
-echo -------apt update-------
-sudo apt update
-echo -------apt upgrade-------
-sudo apt upgrade -y
-echo -------apt install-------
-sudo apt -y install \
+echo -------apt-get update-------
+sudo apt-get update
+echo -------apt-get upgrade-------
+sudo apt-get upgrade -y
+echo -------apt-get install-------
+sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -29,16 +29,14 @@ echo -------docker pgp key-------
 # Add docker official PGP key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-echo -------docker repository-------
+echo -------add docker repository-------
 # Add docker repository
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 echo -------docker install-------
 # Update and install docker
 sudo apt-get update
+apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 
 #echo -------docker sudo permissions-------
@@ -71,6 +69,8 @@ sudo chown -R root:root ./go
 sudo mv go /usr/local
 # Needs new environment variables for Go in ~/.profile
 cd ~
+
+
 
 
 echo -------donwload hyperledger fabric binary-------

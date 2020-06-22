@@ -7,4 +7,4 @@ cd ..
 cd hfsetup
 chmod +x hfsetup.sh
 
-/.hfsetup.sh
+./hfsetup.sh

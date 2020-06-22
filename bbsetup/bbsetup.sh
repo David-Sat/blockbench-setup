@@ -39,14 +39,13 @@ if [ ! -d $HOME/restclient-cpp/ ]; then
 fi
 cd ~
 #sudo chown -R $user:$user restclient-cpp/
+chmod 755 ~/restclient-cpp
 cd restclient-cpp
 
 echo -------restclient make install-------
-# removed sudo
-chmod 755 ~/restclient-cpp
 ./autogen.sh
 ./configure
-make install
+sudo make install
 
 cd ~
 #sudo chown -R $user:$user /home/$user/.config

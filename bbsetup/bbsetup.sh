@@ -84,7 +84,7 @@ echo -------hyperledger install-------
 # Install Hyperledger
 cd ~/blockbench/benchmark/hyperledger
 chmod +x install.sh
-./install.sh
+sudo ./install.sh
 
 echo -------make drivers-------
 # Make drivers
@@ -100,6 +100,7 @@ echo
 echo "ls -la ~"
 echo "sudo chown -R \$USER:\$USER blockbench/"
 echo "sudo chown -R \$USER:\$USER restclient-cpp/"
+echo "sudo chown -R \$USER:$(id -gn \$USER) ~/.config"
 echo "ls -la ~"
 
 

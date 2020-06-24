@@ -17,11 +17,11 @@ sudo apt-get -y install \
 
 echo -------install node js-------
 # Install npm and node js
-sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 echo -------install npm-------
 #npm install npm@5.6.0 -g
-sudo apt-get install npm
+#sudo apt-get install npm
 #npm install npm@latest -g
 
 
@@ -57,14 +57,14 @@ echo -------allow docker-compose binary-------
 # Allow binary
 sudo chmod +x /usr/local/bin/docker-compose
 
-#test: docker-composer -v && docker -v
+#test: docker-compose -v && docker -v
 echo -------install golang-------
 # Install golang
 #sudo apt-get update
 #sudo apt-get -y upgrade
 cd /tmp
-wget https://dl.google.com/go/go1.12.17.linux-amd64.tar.gz
-sudo tar -xvf go1.12.17.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.13.12.linux-amd64.tar.gz
+sudo tar -xvf go1.13.12.linux-amd64.tar.gz
 sudo chown -R root:root ./go
 sudo mv go /usr/local
 # Needs new environment variables for Go in ~/.profile
@@ -76,7 +76,7 @@ cd ~
 echo -------donwload hyperledger fabric binary-------
 
 # Download Hyperledger Fabric binary
-curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.2 1.4.2 0.4.20
+curl -sSL http://bit.ly/2ysbOFE | sudo bash -s -- 1.4.2 1.4.2 0.4.20
 cd ~
 #sudo chown -R $user:$user fabric-samples/
 

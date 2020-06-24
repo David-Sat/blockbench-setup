@@ -74,6 +74,8 @@ cd ~
 
 
 echo -------donwload hyperledger fabric binary-------
+mkdir fabric-samples
+sudo chown -R $user:$user fabric-samples/
 
 # Download Hyperledger Fabric binary
 curl -sSL http://bit.ly/2ysbOFE | sudo bash -s -- 1.4.2 1.4.2 0.4.20

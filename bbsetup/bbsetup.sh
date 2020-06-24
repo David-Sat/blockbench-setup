@@ -101,7 +101,7 @@ echo
 echo "ls -la ~"
 echo "sudo chown -R \$USER:\$USER blockbench/"
 echo "sudo chown -R \$USER:\$USER restclient-cpp/"
-echo "sudo chown -R \$USER:$(id -gn \$USER) ~/.config"
+echo "sudo chown -R \$USER:\$USER ~/.config"
 echo "ls -la ~"
 
 

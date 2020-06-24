@@ -11,6 +11,7 @@ sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
+    gnupg-agent \
     software-properties-common \
     python
 
@@ -24,6 +25,8 @@ sudo apt-get install npm
 #npm install npm@latest -g
 
 
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
 
 echo -------docker pgp key-------
 # Add docker official PGP key
@@ -36,7 +39,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 echo -------docker install-------
 # Update and install docker
 sudo apt-get update
-sudo apt-get install -y docker-ce
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 #echo -------docker sudo permissions-------
 #sudo usermod -aG docker ${USER}

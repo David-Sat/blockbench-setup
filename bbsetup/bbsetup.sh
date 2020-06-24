@@ -11,7 +11,7 @@ fi
 cd ~
 echo -------blockbench folder permissions-------
 chmod 755 ~/blockbench
-sudo chown -R $user .config
+sudo chown -R $user ~/.config
 #sudo chown -R $user:$user blockbench/
 
 echo -------install c++ libraries-------

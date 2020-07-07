@@ -49,7 +49,7 @@ chmod +x ./scripts/bootstrap.sh
 
 #sudo chown -R $user:$user fabric-samples/
 
-export PATH=$HOME/fabric-samples/bin:$PATH
+export PATH=$HOME/go/fabric-samples/bin:$PATH
 
 # add path
 echo

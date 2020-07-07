@@ -3,6 +3,11 @@ cd ~
 INSTALL_DIR=$HOME
 user=$(logname)
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/go/fabric-samples/bin:$PATH
+
 echo -------clone benchmark-------
 # Git clone benchmark
 cd go

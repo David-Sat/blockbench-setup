@@ -41,6 +41,7 @@ echo -------donwload hyperledger fabric binary-------
 
 # Fetch bootstrap.sh from fabric repository using
 cd go
+mkdir ./scripts
 curl -sS https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh -o ./scripts/bootstrap.sh
 # Change file mode to executable
 chmod +x ./scripts/bootstrap.sh

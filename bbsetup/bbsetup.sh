@@ -5,19 +5,18 @@ user=$(logname)
 
 echo -------clone benchmark-------
 # Git clone benchmark
-if [ ! -d $HOME/blockbench ]; then
-    git clone https://github.com/ooibc88/blockbench.git
-fi
+cd go
+git clone https://github.com/ooibc88/blockbench.git
 cd ~
 echo -------blockbench folder permissions-------
-chmod 755 ~/blockbench
-sudo chown -R $user ~/.config
+#chmod 755 ~/blockbench
+#sudo chown -R $user ~/.config
 #sudo chown -R $user:$user blockbench/
 
 echo -------install c++ libraries-------
 # install c++ libraries
 sudo apt-get update
-sudo apt-get -y dist-upgrade
+sudo apt-get -y dist-upgrade #maybe remove
 sudo apt-get -y install g++ curl
 sudo apt-get -y install autoconf
 sudo apt-get -y install autogen
@@ -35,12 +34,11 @@ sudo npm install --g lerna
 
 echo -------clone restclient-------
 # restclient install
-if [ ! -d $HOME/restclient-cpp/ ]; then
-    git clone https://github.com/mrtazz/restclient-cpp.git
-fi
-cd ~
+cd go
+git clone https://github.com/mrtazz/restclient-cpp.git
+
 #sudo chown -R $user:$user restclient-cpp/
-chmod 755 ~/restclient-cpp
+#chmod 755 ~/restclient-cpp
 cd restclient-cpp
 
 echo -------restclient make install-------
@@ -54,7 +52,7 @@ cd ~
 
 echo -------micro npm installs-------
 # Node.js libraries
-cd ~/blockbench/src/micro
+cd ~/go/blockbench/src/micro
 npm install web3
 npm install zipfian
 npm install bignumber.js
@@ -62,14 +60,14 @@ npm install bignumber.js
 #npm install fabric-client
 #npm install fabric-network
 
-npm install
+#npm install
 cd ~
 
 echo -------macro npm installs-------
-cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
+cd ~/go/blockbench/src/macro/kvstore/fabric-v1.4-node
 npm install fabric-ca-client
 npm install fabric-client
-npm install 
+#npm install 
 # -- audit
 #cd ~
 
@@ -83,16 +81,16 @@ cd ~
 
 echo -------hyperledger install-------
 # Install Hyperledger
-cd ~/blockbench/benchmark/hyperledger
+cd ~/go/blockbench/benchmark/hyperledger
 chmod +x install.sh
 sudo ./install.sh
 
 echo -------make drivers-------
 # Make drivers
-cd ~/blockbench/src/macro/kvstore
+cd ~/go/blockbench/src/macro/kvstore
 make
 
-cd ~/blockbench/src/macro/smallbank 
+cd ~/go/blockbench/src/macro/smallbank 
 make
 
 echo 

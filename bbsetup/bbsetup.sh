@@ -4,13 +4,13 @@ INSTALL_DIR=$HOME
 user=$(logname)
 
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/blockbench
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export PATH=$HOME/go/fabric-samples/bin:$PATH
+export PATH=$HOME/fabric-samples/bin:$PATH
 
 echo -------clone benchmark-------
 # Git clone benchmark
-cd go
+cd ~
 git clone https://github.com/ooibc88/blockbench.git
 cd ~
 echo -------blockbench folder permissions-------
@@ -39,7 +39,7 @@ sudo npm install --g lerna
 
 echo -------clone restclient-------
 # restclient install
-cd go
+cd ~
 git clone https://github.com/mrtazz/restclient-cpp.git
 
 #sudo chown -R $user:$user restclient-cpp/
@@ -57,7 +57,7 @@ cd ~
 
 echo -------micro npm installs-------
 # Node.js libraries
-cd ~/go/blockbench/src/micro
+cd ~/blockbench/src/micro
 npm install web3
 npm install zipfian
 npm install bignumber.js
@@ -69,7 +69,7 @@ npm install bignumber.js
 cd ~
 
 echo -------macro npm installs-------
-cd ~/go/blockbench/src/macro/kvstore/fabric-v1.4-node
+cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
 npm install fabric-ca-client
 npm install fabric-client
 #npm install 
@@ -86,16 +86,16 @@ cd ~
 
 echo -------hyperledger install-------
 # Install Hyperledger
-cd ~/go/blockbench/benchmark/hyperledger
+cd ~/blockbench/benchmark/hyperledger
 chmod +x install.sh
 sudo ./install.sh
 
 echo -------make drivers-------
 # Make drivers
-cd ~/go/blockbench/src/macro/kvstore
+cd ~/blockbench/src/macro/kvstore
 make
 
-cd ~/go/blockbench/src/macro/smallbank 
+cd ~/blockbench/src/macro/smallbank 
 make
 
 echo 

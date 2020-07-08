@@ -111,6 +111,11 @@ echo
 echo "update environment variables with:"
 echo "source ~/.profile"
 
+echo 
+echo "give docker sudo:"
+echo "sudo usermod -aG docker \${USER}"
+echo "su - \${USER}"
+
 echo
 echo "In case of missing permissions:"
 echo "sudo chown -R \$USER:\$USER fabric-samples/"

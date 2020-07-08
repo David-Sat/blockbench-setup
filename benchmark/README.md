@@ -65,9 +65,28 @@ Run on localhost:
 
 ```
 ### Micro
+#### Analytic
+No instruction for Hyperledger Fabric v1.4
+
+#### CpuHeavy
 ```
-//TODO
+./deploy.sh
+./benchmark.sh <array_size>
 ```
+`array_size` is the size of the array to sort.
+
+#### IOHeavy
+To measure the duration of batch writing. Both fields must be numeric:
+```
+./deploy.sh
+./write.sh <start key> <# of records>
+```
+To measure the duration of scanning. Both fields must be numeric:
+```
+./deploy.sh
+./scan.sh <start key> <# of records>
+```
+
 ## Shut down
 ```
 cd ~/blockbench/benchmark/fabric-v1.4/four-nodes-docker

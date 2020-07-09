@@ -1,6 +1,6 @@
 #!/bin/bash  
 cd ~
-INSTALL_DIR=$HOME
+HDIR=$HOME
 user=$(logname)
 
 echo -------clone benchmark-------

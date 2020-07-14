@@ -34,7 +34,7 @@ configureWorkload()
         ./deploy_kv.sh
         cd ..
         # temporary solution:
-        ./driver -db fabric-v1.4 -threads 16 -P $workload -txrate 100 -endpoint $ordereraddr,$peeraddr -wl ycsb
+        ./driver -db fabric-v1.4 -threads 16 -P $workload -txrate 100 -endpoint $ordereraddr,$peeraddr -wl ycsb |& tee output.txt
         ;;
     donothing)
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node

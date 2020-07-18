@@ -3,6 +3,8 @@
 ordereraddr="localhost:7041"
 peeraddr="localhost:7051"
 workload="workloads/workloada.spec"
+txrate="100"
+threads="16"
 
 helpFunction()
 {
@@ -36,7 +38,7 @@ configureWorkload()
         ./deploy_kv.sh
         cd ..
         # temporary solution:
-        ./driver -db fabric-v1.4 -threads 16 -P $workload -txrate 100 -endpoint $ordereraddr,$peeraddr -wl ycsb |& tee output.txt
+        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint $ordereraddr,$peeraddr -wl ycsb |& tee output.txt
         ;;
     donothing)
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
@@ -92,10 +94,10 @@ fi
 
 
 # Begin script in case all parameters are correct
-echo "$benchmark"
-echo "$workload"
-echo "$txrate"
-echo "$threads"
+echo "benchmark: $benchmark"
+echo "workload: $workload"
+echo "txrate : $txrate"
+echo "threads: $threads"
 
 startNetwork
 configureWorkload

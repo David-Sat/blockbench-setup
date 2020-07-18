@@ -12,6 +12,8 @@ helpFunction()
     echo -e "\t-w Description of workload"
     echo -e "\t-x Description of txrate"
     echo -e "\t-t Description of threads"
+    echo -e "\tExample:"
+    echo -e "\t./benchmark.sh -b kvstore"
     exit 1 # Exit script after printing help
 }
 
@@ -28,7 +30,7 @@ configureWorkload()
 {
     echo "Configuring workload and deploying chaincode"
     case $benchmark in
-    kvstore)
+    kvstore|ycsb)
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
         npm install
         ./deploy_kv.sh

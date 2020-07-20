@@ -46,7 +46,7 @@ configureWorkload()
         ./deploy_donothing.sh
         cd ..
         # temporary solution:
-        ./driver -db fabric-v1.4 -threads 16 -P workloads/workloada.spec -txrate 100 -endpoint localhost:7041,localhost:7051 -wl donothing
+        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint localhost:7041,localhost:7051 -wl donothing
         ;;
     smallbank)
         cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
@@ -54,7 +54,7 @@ configureWorkload()
         ./deploy.sh
         cd ..
         # temporary solution:
-        ./driver  -db fabric-v1.4 -ops 1000 -threads 4 -txrate 100 -fp stat.txt -endpoint localhost:7041,localhost:7051
+        ./driver  -db fabric-v1.4 -ops 1000 -threads 4 -txrate $txrate -fp stat.txt -endpoint localhost:7041,localhost:7051
         ;;
     cpuheavy)
         cd ~/blockbench/src/micro

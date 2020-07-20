@@ -52,7 +52,7 @@ configureWorkload()
         cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
         npm install
         ./deploy.sh
-        cd ..
+        cd ../..
         # temporary solution:
         ./driver  -db fabric-v1.4 -ops 1000 -threads 4 -txrate $txrate -fp stat.txt -endpoint localhost:7041,localhost:7051
         ;;

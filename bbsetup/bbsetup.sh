@@ -6,7 +6,7 @@ user=$(logname)
 echo -------clone benchmark-------
 # Git clone benchmark
 if [ ! -d $HOME/blockbench ]; then
-    git clone https://github.com/ooibc88/blockbench.git
+    git clone https://github.com/David-Sat/blockbench.git
 fi
 cd ~
 echo -------blockbench folder permissions-------

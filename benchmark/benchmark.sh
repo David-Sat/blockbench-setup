@@ -38,7 +38,7 @@ configureWorkload()
         ./deploy_kv.sh
         cd ..
         # temporary solution:
-        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint $ordereraddr,$peeraddr -wl ycsb |& tee output.txt
+        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint $ordereraddr,$peeraddr -wl ycsb |& tee output_kv.txt
         ;;
     donothing)
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
@@ -46,7 +46,7 @@ configureWorkload()
         ./deploy_donothing.sh
         cd ..
         # temporary solution:
-        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint localhost:7041,localhost:7051 -wl donothing
+        ./driver -db fabric-v1.4 -threads $threads -P $workload -txrate $txrate -endpoint localhost:7041,localhost:7051 -wl donothing |& tee output_dn.txt
         ;;
     smallbank)
         cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
@@ -54,7 +54,7 @@ configureWorkload()
         ./deploy.sh
         cd ../..
         # temporary solution:
-        ./driver  -db fabric-v1.4 -ops 1000 -threads 4 -txrate $txrate -fp stat.txt -endpoint localhost:7041,localhost:7051
+        ./driver  -db fabric-v1.4 -ops 1000 -threads 4 -txrate $txrate -fp stat.txt -endpoint localhost:7041,localhost:7051 |& tee output_sb.txt
         ;;
     cpuheavy)
         cd ~/blockbench/src/micro

@@ -73,6 +73,17 @@ do
     esac
 done
 
+echo $benchmark
+echo $workload
+echo $txrate
+echo $threads
+echo $output_name
+echo $ops
+echo $fp
+echo $ordereraddr
+echo $peeraddr
+
+
 # Print helpFunction in case parameters are empty
 if [ -z "$benchmark" ] || [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ordereraddr" ] || [ -z "$peeraddr" ]
 then

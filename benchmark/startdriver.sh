@@ -3,7 +3,7 @@
 helpFunction()
 {
     echo ""
-    echo "Usage: $0 -b <benchmark> -w <workload> -x <txrate> -t <threads>"
+    echo "Usage: $0 -b <benchmark> -w <workload> -t <txrate> -T <threads>"
     echo -e "\t-b [ycsb, donothing, smallbank] (*)"
     echo -e "\t-w [workloads/workloada.spec (...)] (kvstore)"
     echo -e "\t-t The txrate (*)"

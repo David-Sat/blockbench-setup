@@ -4,7 +4,7 @@
 helpFunction()
 {
     echo ""
-    echo "Usage: $0 -b <benchmark> -x <txrate> -t <threads> -o <output_name>"
+    echo "Usage: $0 -b <benchmark> -t <txrate> -T <threads> -o <output_name>"
     echo -e "\t-b [ycsb, donothing, smallbank] (*)"
     echo -e "\t-w [workloads/workloada.spec (...)] (kvstore)"
     echo -e "\t-t The txrate (*)"
@@ -15,6 +15,10 @@ helpFunction()
     echo -e "\t-s time out in seconds (all)"
     echo -e "\t-O Orderer address (*)"
     echo -e "\t-P Peer address (*)"
+    echo "Usage: "
+    echo -e "./solobenchmark.sh -b ycsb -t 100 -T 16 -o ycsb_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051"
+    echo -e "./solobenchmark.sh -b donothing -t 100 -T 16 -o dono_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051"
+    echo -e "./solobenchmark.sh -b smallbank -t 100 -T 4 -o dono_example.result -n 1000 -f stat.txt -O localhost:7041 -P localhost:7051"
     exit 1 # Exit script after printing help
 }
 
@@ -70,7 +74,7 @@ do
 done
 
 # Print helpFunction in case parameters are empty
-if [ -z "$benchmark" ] || [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ordereraddr" ] || [ -z "$peeraddr" ] || [ -z "$stimeout" ]
+if [ -z "$benchmark" ] || [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ordereraddr" ] || [ -z "$peeraddr" ]
 then
     echo "Some important parameters are empty";
     helpFunction

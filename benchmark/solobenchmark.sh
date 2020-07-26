@@ -17,9 +17,9 @@ helpFunction()
     echo -e "\t-O Orderer address (*)"
     echo -e "\t-P Peer address (*)"
     echo "Usage: "
-    echo -e "./solobenchmark.sh -b ycsb -t 100 -T 16 -o ycsb_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051"
-    echo -e "./solobenchmark.sh -b donothing -t 100 -T 16 -o dono_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051"
-    echo -e "./solobenchmark.sh -b smallbank -t 100 -T 4 -o dono_example.result -n 1000 -f stat.txt -O localhost:7041 -P localhost:7051"
+    echo -e "./solobenchmark.sh -b ycsb -t 100 -T 16 -o ycsb_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051 -s 300"
+    echo -e "./solobenchmark.sh -b donothing -t 100 -T 16 -o dono_example.result -w workloads/workloada.spec -O localhost:7041 -P localhost:7051 -s 300"
+    echo -e "./solobenchmark.sh -b smallbank -t 100 -T 4 -o dono_example.result -n 1000 -f stat.txt -O localhost:7041 -P localhost:7051 -s 300"
     exit 1 # Exit script after printing help
 }
 
@@ -74,17 +74,6 @@ do
     esac
 done
 
-echo $benchmark
-echo $workload
-echo $txrate
-echo $threads
-echo $output_name
-echo $ops
-echo $fp
-echo $ordereraddr
-echo $peeraddr
-echo
-
 
 # Print helpFunction in case parameters are empty
 if [ -z "$benchmark" ] || [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ordereraddr" ] || [ -z "$peeraddr" ]
@@ -93,6 +82,7 @@ then
     helpFunction
 fi
 
+output_dir="$script_directory"/results/$output_name
 
 # Begin script in case all parameters are correct
 
@@ -103,9 +93,9 @@ cd $script_directory
 
 if [ -z "$stimeout" ]
 then
-    ./startdriver.sh -b $benchmark -w $workload -t $txrate -T $threads -n $ops -f $fp -O $ordereraddr -P $peeraddr |& tee $output_name
+    ./startdriver.sh -b $benchmark -w $workload -t $txrate -T $threads -n $ops -f $fp -O $ordereraddr -P $peeraddr |& tee $output_dir
 else 
-    timeout $timeout ./startdriver.sh -b $benchmark -w $workload -t $txrate -T $threads -n $ops -f $fp -O $ordereraddr -P $peeraddr |& tee $output_name
+    timeout $stimeout ./startdriver.sh -b $benchmark -w $workload -t $txrate -T $threads -n $ops -f $fp -O $ordereraddr -P $peeraddr |& tee $output_dir
 fi
 
 cd ~/blockbench/benchmark/fabric-v1.4/four-nodes-docker

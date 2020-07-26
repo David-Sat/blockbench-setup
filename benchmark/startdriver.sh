@@ -57,4 +57,14 @@ then
     helpFunction
 fi
 
+echo benchmark=$benchmark
+echo workload=$workload
+echo txrate=$txrate
+echo threads=$threads
+echo operations=$ops
+echo fp=$fp
+echo ordereraddress=$ordereraddr
+echo peeraddress=$peeraddr
+echo
+
 startBenchmark

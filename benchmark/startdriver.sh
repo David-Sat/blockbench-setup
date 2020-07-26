@@ -44,8 +44,8 @@ do
         T ) threads="$OPTARG" ;;
         n ) ops="$OPTARG" ;;
         f ) fp="$OPTARG" ;;
-        O ) ordereraddr="$Optarg" ;;
-        P ) peeraddr="$Optarg" ;;
+        O ) ordereraddr="$OPTARG" ;;
+        P ) peeraddr="$OPTARG" ;;
         ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
     esac
 done

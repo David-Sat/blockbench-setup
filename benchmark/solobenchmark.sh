@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_directory="$(dirname "$BASH_SOURCE")"
+script_directory=$HOME/blockbench-setup/benchmark
 
 helpFunction()
 {

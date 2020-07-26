@@ -1,5 +1,6 @@
 #!/bin/bash
 
+script_directory="$(dirname "$BASH_SOURCE")"
 
 helpFunction()
 {
@@ -39,19 +40,16 @@ configureWorkload()
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
         npm install
         ./deploy_kv.sh
-        cd ..
         ;;
     donothing)
         cd ~/blockbench/src/macro/kvstore/fabric-v1.4-node
         npm install
         ./deploy_donothing.sh
-        cd ..
         ;;
     smallbank)
         cd ~/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
         npm install
         ./deploy.sh
-        cd ../..
         ;;
     *)
         echo "Sorry, could not recognize benchmark"
@@ -85,6 +83,7 @@ echo $ops
 echo $fp
 echo $ordereraddr
 echo $peeraddr
+echo
 
 
 # Print helpFunction in case parameters are empty
@@ -99,6 +98,8 @@ fi
 
 startNetwork
 configureWorkload
+
+cd $script_directory
 
 if [ -z "$stimeout" ]
 then

@@ -67,8 +67,8 @@ do
         n ) ops="$OPTARG" ;;
         f ) fp="$OPTARG" ;;
         s ) stimeout="$OPTARG" ;;
-        O ) ordereraddr="$Optarg" ;;
-        P ) peeraddr="$Optarg" ;;
+        O ) ordereraddr="$OPTARG" ;;
+        P ) peeraddr="$OPTARG" ;;
         ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
     esac
 done

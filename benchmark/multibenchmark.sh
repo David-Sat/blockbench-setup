@@ -67,7 +67,7 @@ case $benchmark in
     *)
         echo "Sorry, I cannot yet recognize this benchmark"
         ;;
-
+esac
 
 
 

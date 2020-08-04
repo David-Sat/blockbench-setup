@@ -56,12 +56,12 @@ case $benchmark in
         do
             wl_name_ext="${wl##*/}"
             wl_name="${wl_name_ext%.spec}"
-            output_dir="$output_name"_"$benchmark"_"$wl_name".result
+            output_dir="$output_name"_"$benchmark"_"$wl_name".txt
             ./solobenchmark.sh -b $benchmark -t $txrate -T $threads -o $output_dir -w workloads/$wl_name_ext -O $ordereraddr -P $peeraddr -s $stimeout
         done
         ;;
     smallbank)
-        output_dir="$output_name"_"$benchmark".result
+        output_dir="$output_name"_"$benchmark".txt
         ./solobenchmark.sh -b $benchmark -t $txrate -T $threads -o $output_dir -n $ops -f $fp -O $ordereraddr -P $peeraddr -s $stimeout
         ;;
     *)

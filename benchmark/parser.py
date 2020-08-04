@@ -3,47 +3,25 @@
 import sys
 import re
 import os
-import numpy
-
+import glob
+import numpy as np
 from tabulate import tabulate
 
-
-#result_dir = "workloads"
-#result_dir = '/home/david/analysis/laptop-results'
-#result_dir = '/home/david/blockbench/src/macro/smallbank'
-result_dir = '/home/david/blockbench/src/macro/kvstore'
-
-columns = ['WorkloadType', '#Threads', 'Latency', 'Throughput', 
+columns = ['Benchmark', 'WorkloadType', '#Threads', 'TxRate', 'Latency', 'Throughput', 
     'SuccessTxs', 'FailedTxs', 'MVCCConflicts', 'PhantomReads',
     'EndorseFailures']
 
-
-
-# TODO: workload type through name of file
-# TODO: number of threads through name of file
-
-def main():
-    if len(sys.argv) != 2 or sys.argv[1] == '-h':
-        print "Usage: %s OutputFileName" % sys.argv[0]
-        print "Statistics (.result file) for each workload " + \
-              "will be written to %s" % result_dir
-        #sys.exit(-1)
-
-    #path = sys.argv[1]
-    
-    #path = '/home/david/blockbench/src/macro/smallbank/output_sb.txt'
-    path = '/home/david/blockbench/src/macro/kvstore/output_kv.txt'
-
-    wl = "smallbank"
-
-
-
-    with open(path) as file:
+def parseFile(filepath):
+    with open(filepath) as file:
         file_contents = file.read()
+
+        benchmark = re.findall(r"benchmark=(\w*)", file_contents)[0]
+        workloadType = re.findall(r"workload=workloads/(\w*).spec", file_contents)[0]
+        threads = re.findall(r"threads=(\d*)", file_contents)[0]
+        txrate = re.findall(r"txrate=(\d*)", file_contents)[0]
         
         txs = re.findall(r"tx count = (\d*\.\d+|\d+)", file_contents)
         txs = map(int, txs)
-        print(txs)
         txcount = sum(txs)
         latency = re.findall(r"latency = (\d*\.\d+|\d+)", file_contents)
         outstanding_requests = re.findall(r"outstanding request = (\d*\.\d+|\d+)", file_contents)
@@ -60,14 +38,30 @@ def main():
         
         #polled_block = re.findall(r"(\d*\.\d+|\d+) txs", file_contents)
 
-        results = ['todo', 'todo', latency[-1], 'todo', txs_succ, (txs_endo + txs_mvcc + txs_phan), txs_mvcc, txs_phan, txs_endo]
+        result_col = [benchmark, workloadType, threads, txrate, latency[-1], 'todo', txs_succ, (txs_endo + txs_mvcc + txs_phan), txs_mvcc, txs_phan, txs_endo]
 
-        print(tabulate([results], headers=columns))
+        return result_col
 
-        out_file = open(os.path.join(result_dir, wl + ".result"), 'w+')
-        out_file.write(tabulate([results], headers=columns))
 
-        print(outstanding_requests)
+def main():
+    if len(sys.argv) != 2 or sys.argv[1] == '-h':
+        print ("Usage: %s outputDirectory" % sys.argv[0])
+        print ("Statistics (.result file) for each workload " + \
+              "will be written to the specified output directory")
+        
+    path = sys.argv[1]
+
+    results = []
+
+    print(path)
+    for output in sorted(glob.glob(path + '/*.txt')):
+        print(output)
+        results.append(parseFile(output))
+
+    print(tabulate(results, headers=columns))
+
+    out_file = open(os.path.join(path, "outputs.result"), 'w+')
+    out_file.write(tabulate(results, headers=columns))
 
 
 main()

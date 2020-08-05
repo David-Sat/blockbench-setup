@@ -82,12 +82,17 @@ then
     helpFunction
 fi
 
-if [ -z "$workload" ] || [ -z "$operations" ] || [ -z "$fp" ]
+if [ -z "$workload" ]
 then 
     workload=null
-    operations=null
+fi
+
+if [ -z "$operations" ] || [ -z "$fp" ]
+then
+    ops=null
     fp=null
 fi
+
 
 output_dir="$script_directory"/results/$output_name
 

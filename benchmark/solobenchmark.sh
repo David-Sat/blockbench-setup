@@ -74,22 +74,19 @@ do
     esac
 done
 
-echo !benchmark=$benchmark
-echo workload=$workload
-echo !txrate=$txrate
-echo !threads=$threads
-echo !output_name=$output_name
-echo operations=$ops
-echo fp=$fp
-echo !ordereraddress=$ordereraddr
-echo !peeraddress=$peeraddr
-echo
 
 # Print helpFunction in case parameters are empty
 if [ -z "$benchmark" ] || [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ordereraddr" ] || [ -z "$peeraddr" ]
 then
     echo "Some important parameters are empty";
     helpFunction
+fi
+
+if [ -z "$workload" ] || [ -z "$operations" ] || [ -z "$fp" ]
+then 
+    workload=null
+    operations=null
+    fp=null
 fi
 
 output_dir="$script_directory"/results/$output_name

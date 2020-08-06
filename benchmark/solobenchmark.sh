@@ -92,8 +92,13 @@ echo fp=$fp
 
 if [ -z "$operations" ] || [ -z "$fp" ]
 then
+    echo !!!!!!!!!!!!------------!!!!!!!!!!!
+    echo operations=$ops
+    echo fp=$fp
     ops=null
     fp=null
+    echo operations=$ops
+    echo fp=$fp
 fi
 
 

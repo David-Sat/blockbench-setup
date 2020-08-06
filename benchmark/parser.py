@@ -29,7 +29,7 @@ def parseFile(filepath):
         latency = re.findall(r"latency = (\d*\.\d+|\d+)", file_contents)
         outstanding_requests = re.findall(r"outstanding request = (\d*\.\d+|\d+)", file_contents)
 
-        successful = re.findall(r"Successful: (\d)", file_contents)
+        successful = re.findall(r"Successful: ([0-9]+)", file_contents)
         ENDORSEMENT = re.findall(r"ENDORSEMENT: ([0-9]+)", file_contents)
         MVCC = re.findall(r"MVCC: ([0-9]+)", file_contents)
         PHANTOM = re.findall(r"PHANTOM: ([0-9]+)", file_contents)

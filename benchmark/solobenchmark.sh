@@ -87,18 +87,11 @@ then
     workload=null
 fi
 
-echo operations=$ops
-echo fp=$fp
 
-if [ -z "$operations" ] || [ -z "$fp" ]
+if [ -z "$ops" ] || [ -z "$fp" ]
 then
-    echo !!!!!!!!!!!!------------!!!!!!!!!!!
-    echo operations=$ops
-    echo fp=$fp
     ops=null
     fp=null
-    echo operations=$ops
-    echo fp=$fp
 fi
 
 

@@ -16,7 +16,10 @@ def parseFile(filepath):
         file_contents = file.read()
 
         benchmark = re.findall(r"benchmark=(\w*)", file_contents)[0]
-        workloadType = re.findall(r"workload=workloads/(\w*).spec", file_contents)[0]
+        workloadTypeList = re.findall(r"workload=workloads/(\w*).spec", file_contents)
+        if not workloadTypeList:
+            workloadTypeList = ['none']
+        workloadType = workloadTypeList[0]
         threads = re.findall(r"threads=(\d*)", file_contents)[0]
         txrate = re.findall(r"txrate=(\d*)", file_contents)[0]
         

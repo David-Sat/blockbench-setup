@@ -87,6 +87,9 @@ then
     workload=null
 fi
 
+echo operations=$ops
+echo fp=$fp
+
 if [ -z "$operations" ] || [ -z "$fp" ]
 then
     ops=null

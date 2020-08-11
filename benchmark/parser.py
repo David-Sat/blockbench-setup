@@ -7,7 +7,7 @@ import glob
 import numpy as np
 from tabulate import tabulate
 
-columns = ['Benchmark', 'WorkloadType', '#Threads', 'TxRate', 'Latency', 'Throughput', 
+columns = ['Benchmark', 'WorkloadType', '#Threads', 'TxRate', 'Seconds', 'Latency', 'Throughput', 
     'SuccessTxs', 'FailedTxs', 'MVCCConflicts', 'PhantomReads',
     'EndorseFailures']
 
@@ -22,6 +22,7 @@ def parseFile(filepath):
         workloadType = workloadTypeList[0]
         threads = re.findall(r"threads=(\d*)", file_contents)[0]
         txrate = re.findall(r"txrate=(\d*)", file_contents)[0]
+        time = re.findall(r"stimeout=(\d*)", file_contents)
         
         txs = re.findall(r"tx count = (\d*\.\d+|\d+)", file_contents)
         txs = map(int, txs)
@@ -38,10 +39,17 @@ def parseFile(filepath):
         txs_endo = sum(map(int,ENDORSEMENT))
         txs_mvcc = sum(map(int,MVCC))
         txs_phan = sum(map(int,PHANTOM))
+
+        if not time:
+            seconds=0
+            throughput=0
+        else:
+            seconds=int(time[0])
+            throughput=(txs_succ / seconds)
         
         #polled_block = re.findall(r"(\d*\.\d+|\d+) txs", file_contents)
 
-        result_col = [benchmark, workloadType, threads, txrate, latency[-1], 'todo', txs_succ, (txs_endo + txs_mvcc + txs_phan), txs_mvcc, txs_phan, txs_endo]
+        result_col = [benchmark, workloadType, threads, txrate, seconds, latency[-1], throughput, txs_succ, (txs_endo + txs_mvcc + txs_phan), txs_mvcc, txs_phan, txs_endo]
 
         return result_col
 
@@ -53,6 +61,7 @@ def main():
               "will be written to the specified output directory")
         
     path = sys.argv[1]
+    result_out = sys.argv[2]
 
     results = []
 
@@ -63,7 +72,7 @@ def main():
 
     print(tabulate(results, headers=columns))
 
-    out_file = open(os.path.join(path, "outputs.result"), 'w+')
+    out_file = open(os.path.join(path, result_out), 'w+')
     out_file.write(tabulate(results, headers=columns))
 
 

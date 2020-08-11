@@ -29,6 +29,8 @@ npm install
 #cd ~
 
 cd $HDIR/blockbench/src/macro/smallbank/api_adapters/fabric-v1.4-node
+npm install fabric-ca-client
+npm install fabric-client
 npm install
 
 cd ~

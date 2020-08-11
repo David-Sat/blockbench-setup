@@ -28,6 +28,7 @@ startNetwork()
     echo "Spinning up four-nodes Fabric Network"
     cd ~/blockbench/benchmark/fabric-v1.4/four-nodes-docker
     docker-compose -f docker-compose.yaml up -d
+    sleep 5
     echo "Create and join channel for each peer"
     ./setup.sh
 }

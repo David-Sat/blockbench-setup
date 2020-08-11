@@ -31,7 +31,7 @@ startBenchmark()
     *)
         echo "Sorry, could not recognize benchmark"
         ;;
-esac
+    esac
 }
 
 

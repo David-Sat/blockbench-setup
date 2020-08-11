@@ -1,0 +1,28 @@
+benchmark=ycsb
+workload=workloads/workloadd.spec
+txrate=100
+threads=16
+operations=null
+fp=null
+ordereraddress=localhost:7041
+peeraddress=localhost:7051
+
+Configuring workload and deploying chaincode
+Make sure to deploy ycsb chaincode via fabric-v1.4-node/deploy_kv.sh
+Current TIP = 1
+Successful: 1 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 1 : 1 txs 
+In the last 2s, tx count = 0 latency = 0 outstanding request = 32
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 2 : 16 txs 
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 3 : 16 txs 
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 4 : 16 txs 
+In the last 2s, tx count = 48 latency = 5763.78 outstanding request = 112
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 5 : 16 txs 
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 6 : 16 txs 
+Successful: 16 ENDORSEMENT: 0 MVCC: 0 PHANTOM: 0
+polled block 7 : 16 txs 

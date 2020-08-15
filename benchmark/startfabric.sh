@@ -62,6 +62,7 @@ ycsbplusFunction(){
 
     cd ~/blockbench/src/macro/kvstore
     echo "execute driver with this:"
+    echo "cd ~/blockbench/src/macro/kvstore"
     echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 }
 
@@ -80,6 +81,7 @@ smallbankFunction(){
 
     cd $script_directory
     echo "execute driver with this:"
+    echo "cd ~/blockbench/src/macro/smallbank"
     echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint ${endpoint}"
 }
 

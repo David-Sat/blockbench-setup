@@ -15,9 +15,9 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./startfabric.sh -b ycsb -t 100 -T 16 -o 01  -w workloada.spec"
-    echo -e "./startfabric.sh -b donothing -t 100 -T 16 -o 01 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 100 -T 4 -o 01 -n 1000 -f stat.txt"
+    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01  -w workloada.spec"
+    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -w workloada.spec"
+    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt"
     exit 1 # Exit script after printing help
 }
 
@@ -61,7 +61,8 @@ ycsbplusFunction(){
     startNetwork
 
     cd ~/blockbench/src/macro/kvstore
-    ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20
+    echo "execute driver with this:"
+    echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 }
 
 
@@ -78,7 +79,8 @@ smallbankFunction(){
     startNetwork
 
     cd $script_directory
-    ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint ${endpoint}
+    echo "execute driver with this:"
+    echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint ${endpoint}"
 }
 
 ioheavyFunction(){
@@ -145,3 +147,6 @@ esac
 
 #cd services/
 #rm wallet/*
+
+
+#cd ~/blockbench-setup/benchmark

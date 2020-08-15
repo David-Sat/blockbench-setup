@@ -4,6 +4,7 @@ CHANNEL_NAME=mychannel
 
 CC_NAME=kvstore
 MODE=open_loop
+endpoint=localhost:8800,localhost:8801,localhost:8802
 
 
 echo "Launch and setup"
@@ -23,7 +24,7 @@ node enrollAdmin.js
 node registerUser.js
 
 
-echo "launch processes"
+echo "Launch processes"
 node block-server.js ${CHANNEL_NAME} 8800 > block-server.log 2>&1 &
 
 node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8801 > txn-server-8801.log 2>&1 &
@@ -33,11 +34,12 @@ node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8802 > txn-server-8802.log
 
 
 #cd ~/blockbench/src/macro/kvstore
-#./driver -db fabric-v2.2 -threads 1 -P workloads/workloada.spec -txrate 5 -endpoint localhost:8545 -wl ycsb -wt 20
+#endpoint=localhost:8800,localhost:8801,localhost:8802
+#./driver -db fabric-v2.2 -threads 1 -P workloads/workloada.spec -txrate 5 -endpoint $endpoint -wl ycsb -wt 20
 
 #cd ~/blockbench/benchmark/fabric-v2.2
 
-#./network.sh down
+#sudo ./network.sh down
 
 #ps aux  |  grep -i block-server  |  awk '{print $2}' | xargs kill -9
 #ps aux  |  grep -i txn-server  |  awk '{print $2}' | xargs kill -9

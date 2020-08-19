@@ -11,7 +11,7 @@ helpFunction()
 
 
 
-while getopts "b:w:t:T:s:n:f:w:" opt
+while getopts "b:w:t:T:s:n:f:w:e:" opt
 do
     case "$opt" in
         b ) benchmark="$OPTARG" ;;
@@ -21,6 +21,7 @@ do
         n ) ops="$OPTARG" ;;
         f ) fp="$OPTARG" ;;
         w ) workload="$OPTARG" ;;
+        e ) endpoint="$OPTARG" ;;
         ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
     esac
 done
@@ -37,8 +38,7 @@ echo benchmark=$benchmark
 echo workload=$workload
 echo txrate=$txrate
 echo threads=$threads
-echo ordereraddress=$ordereraddr
-echo peeraddress=$peeraddr
+echo endpoint=$endpoint
 
 if [ -z "$stimeout" ]
 then

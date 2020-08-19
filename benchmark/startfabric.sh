@@ -68,7 +68,7 @@ ycsbplusFunction(){
     #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 
     sleep 5
-
+    cd $script_directory
     ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload |& tee $output_dir
     
 }
@@ -91,10 +91,9 @@ smallbankFunction(){
     #echo "cd ~/blockbench/src/macro/smallbank"
     #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
 
+    cd $script_directory
     ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout |& tee $output_dir
 
-    cd $script_directory
-    ./fabricdown.sh
 }
 
 ioheavyFunction(){
@@ -154,6 +153,7 @@ case $benchmark in
         ;;
 esac
 
+cd $script_directory
 ./fabricdown.sh
 
 

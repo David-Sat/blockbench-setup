@@ -69,7 +69,7 @@ ycsbplusFunction(){
 
     sleep 5
     cd $script_directory
-    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -endpoint {$endpoint} |& tee $output_dir
+    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e {$endpoint} |& tee $output_dir
     
 }
 
@@ -92,7 +92,7 @@ smallbankFunction(){
     #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
 
     cd $script_directory
-    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -endpoint {$endpoint} |& tee $output_dir
+    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -e {$endpoint} |& tee $output_dir
 
 }
 

@@ -65,6 +65,7 @@ ycsbplusFunction(){
     #echo "cd ~/blockbench/src/macro/kvstore"
     #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 
+    sleep 10
     cd ~/blockbench/src/macro/kvstore
 
     if [ -z "$stimeout" ]

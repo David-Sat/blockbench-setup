@@ -15,9 +15,9 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01  -w workloada.spec"
-    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt"
+    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
+    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
+    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f -s 300 stat.txt"
     exit 1 # Exit script after printing help
 }
 
@@ -56,14 +56,38 @@ ycsbplusFunction(){
 
     wl_name="${workload%.spec}"  #"workloada"
     output_dir_tmp="$output_name"_"$benchmark"_"$wl_name".txt
-    output_dir="$script_directory"/results/$output_dir_tmp
+    output_dir="$script_directory"/results2/$output_dir_tmp
 
     startNetwork
 
     cd ~/blockbench/src/macro/kvstore
-    echo "execute driver with this:"
-    echo "cd ~/blockbench/src/macro/kvstore"
-    echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
+    echo "execute driver"
+    #echo "cd ~/blockbench/src/macro/kvstore"
+    #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
+
+    cd ~/blockbench/src/macro/kvstore
+
+    if [ -z "$stimeout" ]
+    then
+        ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20 |& tee $output_dir
+        stimeout=0
+    else
+        timeout $stimeout ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20 |& tee $output_dir
+    fi
+
+
+    # write benchmark info into output file
+    info="
+    version=fabric-v2.2
+    benchmark=$benchmark
+    txrate=$txrate
+    threads=$threads
+    stimeout=$stimeout
+    workload=$workload
+    "
+
+    echo "$info" >> $output_dir
+
 }
 
 
@@ -74,15 +98,37 @@ smallbankFunction(){
         helpFunction
     fi
     
-    output_dir_tmp="$output_name"_"$benchmark"_txr"$txrate".txt
-    output_dir="$script_directory"/results/$output_dir_tmp
+    output_dir_tmp="$output_name"_"$benchmark"_txr"$txrate"_threads"$threads".txt
+    output_dir="$script_directory"/results2/$output_dir_tmp
 
     startNetwork
 
     cd $script_directory
-    echo "execute driver with this:"
-    echo "cd ~/blockbench/src/macro/smallbank"
-    echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint ${endpoint}"
+    echo "execute driver"
+    #echo "cd ~/blockbench/src/macro/smallbank"
+    #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
+
+    cd ~/blockbench/src/macro/smallbank
+
+    if [ -z "$stimeout" ]
+    then
+        ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint {$endpoint} |& tee $output_dir
+        stimeout=0
+    else
+        timeout $stimeout ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint {$endpoint} |& tee $output_dir
+    fi
+
+    info="
+    version=fabric-v2.2
+    benchmark=$benchmark
+    txrate=$txrate
+    threads=$threads
+    stimeout=$stimeout
+    ops=$ops
+    fp=$fp
+    "
+
+    echo "$info" >> $output_dir
 }
 
 ioheavyFunction(){
@@ -96,12 +142,13 @@ cpuheavyFunction(){
 }
 
 
-while getopts "b:w:t:T:o:n:f:w:" opt
+while getopts "b:w:t:T:s:o:n:f:w:" opt
 do
     case "$opt" in
         b ) benchmark="$OPTARG" ;;
         t ) txrate="$OPTARG" ;;
         T ) threads="$OPTARG" ;;
+        s ) stimeout="$OPTARG" ;;
         o ) output_name="$OPTARG" ;; #todo
         n ) ops="$OPTARG" ;;
         f ) fp="$OPTARG" ;;
@@ -115,6 +162,9 @@ then
     echo "The benchmark parameter -b is empty";
     helpFunction
 fi
+
+
+
 
 case $benchmark in
     ycsb|donothing)
@@ -138,7 +188,7 @@ case $benchmark in
         ;;
 esac
 
-
+./fabricdown.sh
 
 
 #cd ~/blockbench/benchmark/fabric-v2.2

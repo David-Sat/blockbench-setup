@@ -17,7 +17,7 @@ helpFunction()
     echo "Usage: "
     echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
     echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f -s 300 stat.txt"
+    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 300"
     exit 1 # Exit script after printing help
 }
 
@@ -38,9 +38,11 @@ startNetwork()
     npm install;
     node enrollAdmin.js
     node registerUser.js
+    sleep 1
 
     echo "Launch processes"
     node block-server.js ${CHANNEL_NAME} 8800 > block-server.log 2>&1 &
+    sleep 1
 
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8801 > txn-server-8801.log 2>&1 &
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8802 > txn-server-8802.log 2>&1 &
@@ -65,30 +67,10 @@ ycsbplusFunction(){
     #echo "cd ~/blockbench/src/macro/kvstore"
     #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 
-    sleep 10
-    cd ~/blockbench/src/macro/kvstore
+    sleep 5
 
-    if [ -z "$stimeout" ]
-    then
-        ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20 |& tee $output_dir
-        stimeout=0
-    else
-        timeout $stimeout ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20 |& tee $output_dir
-    fi
-
-
-    # write benchmark info into output file
-    info="
-    version=fabric-v2.2
-    benchmark=$benchmark
-    txrate=$txrate
-    threads=$threads
-    stimeout=$stimeout
-    workload=$workload
-    "
-
-    echo "$info" >> $output_dir
-
+    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload |& tee $output_dir
+    
 }
 
 
@@ -109,27 +91,10 @@ smallbankFunction(){
     #echo "cd ~/blockbench/src/macro/smallbank"
     #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
 
-    cd ~/blockbench/src/macro/smallbank
+    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout |& tee $output_dir
 
-    if [ -z "$stimeout" ]
-    then
-        ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint {$endpoint} |& tee $output_dir
-        stimeout=0
-    else
-        timeout $stimeout ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint {$endpoint} |& tee $output_dir
-    fi
-
-    info="
-    version=fabric-v2.2
-    benchmark=$benchmark
-    txrate=$txrate
-    threads=$threads
-    stimeout=$stimeout
-    ops=$ops
-    fp=$fp
-    "
-
-    echo "$info" >> $output_dir
+    cd $script_directory
+    ./fabricdown.sh
 }
 
 ioheavyFunction(){

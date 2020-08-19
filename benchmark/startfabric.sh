@@ -15,9 +15,9 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
-    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 300 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 300"
+    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 100 -w workloada.spec"
+    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 100 -w workloada.spec"
+    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 100"
     exit 1 # Exit script after printing help
 }
 
@@ -69,7 +69,7 @@ ycsbplusFunction(){
 
     sleep 5
     cd $script_directory
-    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e {$endpoint} |& tee $output_dir
+    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e $endpoint |& tee $output_dir
     
 }
 
@@ -92,7 +92,7 @@ smallbankFunction(){
     #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
 
     cd $script_directory
-    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -e {$endpoint} |& tee $output_dir
+    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -e $endpoint |& tee $output_dir
 
 }
 

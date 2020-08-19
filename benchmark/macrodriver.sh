@@ -9,9 +9,6 @@ helpFunction()
     exit 1 # Exit script after printing help
 }
 
-ycsbplusFunction(){
-
-}
 
 
 while getopts "b:w:t:T:s:n:f:w:" opt

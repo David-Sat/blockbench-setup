@@ -35,7 +35,6 @@ fi
 
 
 echo benchmark=$benchmark
-echo workload=$workload
 echo txrate=$txrate
 echo threads=$threads
 echo endpoint=$endpoint
@@ -45,6 +44,13 @@ then
     echo timeout=0
 else
     echo stimeout=$stimeout    
+fi
+
+if [ -z "$workload" ]
+then
+    echo workload="none"
+else
+    echo workload=$workload    
 fi
 echo
 

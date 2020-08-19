@@ -91,7 +91,8 @@ smallbankFunction(){
     echo "execute driver"
     #echo "cd ~/blockbench/src/macro/smallbank"
     #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
-
+    
+    sleep 5
     cd $script_directory
     ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -e $endpoint |& tee $output_dir
 

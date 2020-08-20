@@ -4,6 +4,7 @@ CHANNEL_NAME=mychannel
 endpoint=localhost:8800,localhost:8801,localhost:8802
 
 script_directory=$HOME/blockbench-setup/benchmark
+workload_dir=$HOME/blockbench/src/macro/kvstore/workloads
 
 
 helpFunction()
@@ -15,9 +16,8 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
-    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 40"
+    echo -e "./kvstore.sh -b ycsb -t 40 -T 4 -o 01 -s 40"
+    echo -e "./kvstore.sh -b donothing -t 40 -T 4 -o 01 -s 40"
     exit 1 # Exit script after printing help
 }
 
@@ -47,6 +47,7 @@ startNetwork()
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8801 > txn-server-8801.log 2>&1 &
     sleep 1
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8802 > txn-server-8802.log 2>&1 &
+    sleep 1
 }
 
 
@@ -75,51 +76,14 @@ ycsbplusFunction(){
 }
 
 
-smallbankFunction(){
-    if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$ops" ] || [ -z "$fp" ]
-    then
-        echo "Some important parameters are empty";
-        helpFunction
-    fi
-    
-    output_dir_tmp="$output_name"_"$benchmark"_txr"$txrate"_threads"$threads".txt
-    output_dir="$script_directory"/results2/$output_dir_tmp
-
-    startNetwork
-
-    cd $script_directory
-    echo "execute driver"
-    #echo "cd ~/blockbench/src/macro/smallbank"
-    #echo "./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint $endpoint"
-
-    sleep 5
-    cd $script_directory
-    ./macrodriver.sh -b smallbank -t $txrate -T $threads -n $ops -f $fp -s $stimeout -e $endpoint |& tee $output_dir
-
-}
-
-ioheavyFunction(){
-    #TODO
-    echo "Not implemented yet"
-}
-
-cpuheavyFunction(){
-    #TODO
-    echo "Not implemented yet"
-}
-
-
-while getopts "b:w:t:T:s:o:n:f:w:" opt
+while getopts "b:w:t:T:s:o:" opt
 do
     case "$opt" in
         b ) benchmark="$OPTARG" ;;
         t ) txrate="$OPTARG" ;;
         T ) threads="$OPTARG" ;;
         s ) stimeout="$OPTARG" ;;
-        o ) output_name="$OPTARG" ;; #todo
-        n ) ops="$OPTARG" ;;
-        f ) fp="$OPTARG" ;;
-        w ) workload="$OPTARG" ;;
+        o ) output_name="$OPTARG" ;;
         ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
     esac
 done
@@ -133,40 +97,28 @@ fi
 
 
 
-case $benchmark in
-    ycsb|donothing)
-        CC_NAME=kvstore
-        MODE=open_loop
-        ycsbplusFunction
-        ;;
-    smallbank)
-        CC_NAME=smallbank
-        MODE=open_loop
-        smallbankFunction
-        ;;
-    ioheavy)
-        ioheavyFunction
-        ;;
-    cpuheavy)
-        cpuheavyFunction
-        ;;
-    *)
-        echo "Sorry, I cannot recognize this benchmark"
-        ;;
-esac
+CC_NAME=kvstore
+MODE=open_loop
+workloads=`ls $workload_dir/*.spec`
+
+if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$workload" ]
+then
+    echo "Some important parameters are empty";
+    helpFunction
+fi
+
+startNetwork
+
+for wl in $workloads
+do
+    wl_name_ext="${wl##*/}"
+    wl_name="${wl_name_ext%.spec}"
+    output_dir="$script_directory"/results2/"$output_name"_"$benchmark"_"$wl_name".txt
+
+    cd $script_directory
+    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $wl_name_ext -e $endpoint |& tee $output_dir
+done
+
 
 cd $script_directory
 ./fabricdown.sh
-
-
-#cd ~/blockbench/benchmark/fabric-v2.2
-#sudo ./network.sh down
-
-#ps aux  |  grep -i block-server  |  awk '{print $2}' | xargs kill -9
-#ps aux  |  grep -i txn-server  |  awk '{print $2}' | xargs kill -9
-
-#cd services/
-#rm wallet/*
-
-
-#cd ~/blockbench-setup/benchmark

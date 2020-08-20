@@ -16,8 +16,8 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./kvstore.sh -b ycsb -t 40 -T 4 -o 01 -s 40"
-    echo -e "./kvstore.sh -b donothing -t 40 -T 4 -o 01 -s 40"
+    echo -e "./kvstore2.sh -b ycsb -t 40 -T 4 -o 01 -s 40"
+    echo -e "./kvstore2.sh -b donothing -t 40 -T 4 -o 01 -s 40"
     exit 1 # Exit script after printing help
 }
 
@@ -52,7 +52,7 @@ startNetwork()
 
 
 ycsbplusFunction(){
-    if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$workload" ]
+    if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ]
     then
         echo "Some important parameters are empty";
         helpFunction

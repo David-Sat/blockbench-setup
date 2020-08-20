@@ -51,30 +51,6 @@ startNetwork()
 }
 
 
-ycsbplusFunction(){
-    if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ]
-    then
-        echo "Some important parameters are empty";
-        helpFunction
-    fi
-
-    wl_name="${workload%.spec}"  #"workloada"
-    output_dir_tmp="$output_name"_"$benchmark"_"$wl_name".txt
-    output_dir="$script_directory"/results2/$output_dir_tmp
-
-    startNetwork
-
-    cd ~/blockbench/src/macro/kvstore
-    echo "execute driver"
-    #echo "cd ~/blockbench/src/macro/kvstore"
-    #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
-
-    sleep 5
-    cd $script_directory
-    ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e $endpoint |& tee $output_dir
-    
-}
-
 
 while getopts "b:w:t:T:s:o:" opt
 do
@@ -101,7 +77,7 @@ CC_NAME=kvstore
 MODE=open_loop
 workloads=`ls $workload_dir/*.spec`
 
-if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] || [ -z "$workload" ]
+if [ -z "$txrate" ] || [ -z "$threads" ] || [ -z "$output_name" ] 
 then
     echo "Some important parameters are empty";
     helpFunction

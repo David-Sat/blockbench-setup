@@ -38,6 +38,7 @@ echo benchmark=$benchmark
 echo txrate=$txrate
 echo threads=$threads
 echo endpoint=$endpoint
+echo zipfian_const=unknown
 
 if [ -z "$stimeout" ]
 then

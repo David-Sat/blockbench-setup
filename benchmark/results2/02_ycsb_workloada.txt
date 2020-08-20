@@ -1,0 +1,15 @@
+benchmark=ycsb
+txrate=100
+threads=8
+endpoint=localhost:8800,localhost:8801,localhost:8802
+zipfian_const=unknown
+stimeout=40
+workload=workloada.spec
+
+Make sure to deploy YCSB chaincode based on README.md. 
+Current TIP = -1
+In the last 2s, tx count = 0 latency = 0 outstanding request = 1   V: 0, E: 0, M: 0, P: 0
+Fail to read with error Block -1 does not exist. 
+Fail to read with error Block -1 does not exist. 
+timeout: the monitored command dumped core
+./macrodriver.sh: line 60:  4216 Segmentation fault      timeout $stimeout ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint ${endpoint} -wl $benchmark -wt 20

@@ -27,12 +27,12 @@ startNetwork()
 {
     echo "Launch and setup"
     cd ~/blockbench/benchmark/fabric-v2.2
-    ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME}
+    ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME} -d 6
     sleep 5
 
     echo "Deploy Chaincode"
     CC_SRC_PATH="../contracts/fabric-v2.2/${CC_NAME}"
-    ./network.sh deployCC -ccn ${CC_NAME} -ccp ${CC_SRC_PATH}
+    ./network.sh deployCC -ccn ${CC_NAME} -ccp ${CC_SRC_PATH} -d 6
     sleep 5
 
     echo "Install dependencies and prepare identities"

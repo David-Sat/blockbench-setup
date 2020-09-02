@@ -102,24 +102,38 @@ smallbankFunction(){
 }
 
 ioheavyFunction(){
+    startkey=1
+    num_of_records=1000
+
     startNetwork
     sleep 5
 
+
+    echo batch writing
+    echo
+
     curl --header "Content-Type: application/json" \
     --request POST \
-    --data '{"function":"Write","args":["1", "1000"]}' \
+    --data '{"function":"Write","args":["1", "10000"]}' \
     http://localhost:8801/invoke    
 
-
-    curl "http://localhost:8801/query?function=Scan&args=1,1000"
+    echo
+    echo scanning
+    echo
+    curl "http://localhost:8801/query?function=Scan&args=1,10000"
 
 }
 
 cpuheavyFunction(){
+
+
     startNetwork
     sleep 5
 
-    curl "http://localhost:8801/query?function=Compute&args=<1000>"
+    echo cpuheavy result
+    echo
+
+    curl "http://localhost:8801/query?function=Compute&args=10000"
 }
 
 

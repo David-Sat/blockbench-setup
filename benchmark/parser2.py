@@ -16,7 +16,7 @@ def parseFile(filepath):
         file_contents = file.read()
 
         benchmark = re.findall(r"benchmark=(\w*)", file_contents)[0]
-        workloadTypeList = re.findall(r"workload=workloads/(\w*).spec", file_contents)
+        workloadTypeList = re.findall(r"workload=(\w*).spec", file_contents)
         if not workloadTypeList:
             workloadTypeList = ['none']
         workloadType = workloadTypeList[0]

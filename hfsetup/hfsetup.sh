@@ -95,6 +95,10 @@ echo "export PATH=\$HOME/fabric-samples/bin:\$PATH"
 echo "export GOPATH=\$HOME/blockbench"
 echo "export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin"
 
+#export PATH=$HOME/fabric-samples/bin:$PATH
+#export GOPATH=$HOME/blockbench
+#export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 echo
 echo "update environment variables with:"
 echo "source ~/.profile"

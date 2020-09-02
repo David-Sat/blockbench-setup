@@ -121,6 +121,7 @@ ioheavyFunction(){
     echo scanning
     echo
     curl "http://localhost:8801/query?function=Scan&args=1,10000"
+    echo
 
 }
 

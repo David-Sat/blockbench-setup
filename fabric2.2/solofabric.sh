@@ -15,11 +15,11 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./startfabric.sh -b ycsb -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
-    echo -e "./startfabric.sh -b donothing -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
-    echo -e "./startfabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 40"
-    echo -e "./startfabric.sh -b cpuheavy"
-    echo -e "./startfabric.sh -b ioheavy"
+    echo -e "./solofabric.sh -b ycsb -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
+    echo -e "./solofabric.sh -b donothing -t 40 -T 4 -o 01 -s 40 -w workloada.spec"
+    echo -e "./solofabric.sh -b smallbank -t 40 -T 4 -o 01 -n 1000 -f stat.txt -s 40"
+    echo -e "./solofabric.sh -b cpuheavy"
+    echo -e "./solofabric.sh -b ioheavy"
     exit 1 # Exit script after printing help
 }
 

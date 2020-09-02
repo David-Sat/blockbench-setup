@@ -16,8 +16,8 @@ helpFunction()
     echo -e "\t-T The number of threads (*)"
     echo -e "\t-s time out in seconds (all)"
     echo "Usage: "
-    echo -e "./kvstore2.sh -b ycsb -t 40 -T 4 -o 01 -s 40"
-    echo -e "./kvstore2.sh -b donothing -t 40 -T 4 -o 01 -s 40"
+    echo -e "./multikvstore.sh -b ycsb -t 40 -T 4 -o 01 -s 40"
+    echo -e "./multikvstore.sh -b donothing -t 40 -T 4 -o 01 -s 40"
     exit 1 # Exit script after printing help
 }
 

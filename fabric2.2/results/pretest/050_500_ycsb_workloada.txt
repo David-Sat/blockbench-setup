@@ -1,0 +1,295 @@
+benchmark=ycsb
+txrate=500
+threads=4
+endpoint=localhost:8800,localhost:8801,localhost:8802
+zipfian_const=unknown
+stimeout=300
+workload=workloada.spec
+
+Make sure to deploy YCSB chaincode based on README.md. 
+Current TIP = 5
+Fail to write with error: No discovery results found
+Fail to write with error: No discovery results found
+Fail to write with error: No discovery results found
+Fail to write with error: No discovery results found
+Fail to write with error: No discovery results found
+polled block 5 : 1 txs VALID: 1  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 6 : 49 txs VALID: 49  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 7 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 8 : 36 txs VALID: 36  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 9 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 10 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 11 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 12 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 13 : 49 txs VALID: 49  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 14 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 15 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 16 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 17 : 50 txs VALID: 50  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 18 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 19 : 33 txs VALID: 33  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 20 : 35 txs VALID: 35  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 21 : 38 txs VALID: 38  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 22 : 38 txs VALID: 38  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 23 : 50 txs VALID: 50  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 24 : 50 txs VALID: 50  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 25 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+polled block 26 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+In the last 2s, tx count = 909 latency = 22976.6 outstanding request = 94   V: 910, E: 0, M: 0, P: 0
+polled block 27 : 50 txs VALID: 50  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+In the last 2s, tx count = 50 latency = 226.019 outstanding request = 59   V: 50, E: 0, M: 0, P: 0
+polled block 28 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 0  PHANTOM: 0
+In the last 2s, tx count = 42 latency = 191.791 outstanding request = 50   V: 46, E: 0, M: 0, P: 0
+polled block 29 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 114.382 outstanding request = 37   V: 46, E: 0, M: 4, P: 0
+polled block 30 : 42 txs VALID: 42  ENDORSEMENT: 1  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 108.338 outstanding request = 43   V: 42, E: 1, M: 7, P: 0
+polled block 31 : 35 txs VALID: 35  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 80.7305 outstanding request = 45   V: 35, E: 0, M: 8, P: 0
+polled block 32 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 121.716 outstanding request = 45   V: 46, E: 0, M: 4, P: 0
+polled block 33 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 83.5137 outstanding request = 49   V: 47, E: 0, M: 3, P: 0
+polled block 34 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 113.446 outstanding request = 49   V: 44, E: 0, M: 6, P: 0
+polled block 35 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 122.044 outstanding request = 46   V: 45, E: 0, M: 5, P: 0
+polled block 36 : 38 txs VALID: 38  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 111.577 outstanding request = 49   V: 38, E: 0, M: 7, P: 0
+polled block 37 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+polled block 38 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 44 latency = 181.328 outstanding request = 32   V: 87, E: 0, M: 13, P: 0
+polled block 39 : 42 txs VALID: 42  ENDORSEMENT: 1  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 90.4932 outstanding request = 27   V: 42, E: 1, M: 7, P: 0
+polled block 40 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 76.9572 outstanding request = 26   V: 45, E: 0, M: 5, P: 0
+In the last 2s, tx count = 0 latency = 0 outstanding request = 44   V: 0, E: 0, M: 0, P: 0
+polled block 41 : 36 txs VALID: 36  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+polled block 42 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 40 latency = 176.905 outstanding request = 22   V: 78, E: 0, M: 14, P: 0
+In the last 2s, tx count = 0 latency = 0 outstanding request = 36   V: 0, E: 0, M: 0, P: 0
+polled block 43 : 34 txs VALID: 34  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 14 latency = 76.097 outstanding request = 45   V: 34, E: 0, M: 4, P: 0
+polled block 44 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 17 latency = 95.238 outstanding request = 56   V: 41, E: 0, M: 2, P: 0
+polled block 45 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 134.296 outstanding request = 58   V: 42, E: 0, M: 5, P: 0
+polled block 46 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+polled block 47 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 54 latency = 226.854 outstanding request = 35   V: 89, E: 0, M: 9, P: 0
+polled block 48 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 30 latency = 97.7097 outstanding request = 32   V: 43, E: 0, M: 7, P: 0
+polled block 49 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 78.4362 outstanding request = 35   V: 39, E: 0, M: 11, P: 0
+polled block 50 : 44 txs VALID: 44  ENDORSEMENT: 1  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 99.8639 outstanding request = 31   V: 44, E: 1, M: 5, P: 0
+polled block 51 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 81.0574 outstanding request = 36   V: 46, E: 0, M: 4, P: 0
+polled block 52 : 43 txs VALID: 43  ENDORSEMENT: 1  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 20 latency = 75.215 outstanding request = 49   V: 43, E: 1, M: 6, P: 0
+polled block 53 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 33 latency = 128.099 outstanding request = 39   V: 48, E: 0, M: 2, P: 0
+polled block 54 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 99.2633 outstanding request = 43   V: 42, E: 0, M: 8, P: 0
+polled block 55 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 92.8472 outstanding request = 46   V: 45, E: 0, M: 5, P: 0
+polled block 56 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 28 latency = 122.356 outstanding request = 46   V: 48, E: 0, M: 2, P: 0
+polled block 57 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 96.3187 outstanding request = 47   V: 42, E: 0, M: 8, P: 0
+polled block 58 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 124.139 outstanding request = 46   V: 47, E: 0, M: 3, P: 0
+polled block 59 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 99.507 outstanding request = 46   V: 45, E: 0, M: 4, P: 0
+polled block 60 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 28 latency = 128.575 outstanding request = 48   V: 44, E: 0, M: 2, P: 0
+polled block 61 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 81.3332 outstanding request = 48   V: 45, E: 0, M: 5, P: 0
+polled block 62 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+polled block 63 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 46 latency = 195.767 outstanding request = 31   V: 88, E: 0, M: 12, P: 0
+polled block 64 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 80.108 outstanding request = 28   V: 39, E: 0, M: 11, P: 0
+polled block 65 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 70.154 outstanding request = 35   V: 45, E: 0, M: 5, P: 0
+polled block 66 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 96.9613 outstanding request = 35   V: 44, E: 0, M: 6, P: 0
+polled block 67 : 47 txs VALID: 47  ENDORSEMENT: 1  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 86.3609 outstanding request = 41   V: 47, E: 1, M: 2, P: 0
+polled block 68 : 44 txs VALID: 44  ENDORSEMENT: 1  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 98.4507 outstanding request = 51   V: 44, E: 1, M: 5, P: 0
+polled block 69 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 29 latency = 116.008 outstanding request = 49   V: 44, E: 0, M: 6, P: 0
+polled block 70 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 114.172 outstanding request = 50   V: 42, E: 0, M: 8, P: 0
+polled block 71 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 20 latency = 96.9846 outstanding request = 56   V: 47, E: 0, M: 3, P: 0
+polled block 72 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 28 latency = 139.349 outstanding request = 53   V: 48, E: 0, M: 2, P: 0
+polled block 73 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+polled block 74 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 47 latency = 198.432 outstanding request = 35   V: 83, E: 0, M: 17, P: 0
+polled block 75 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 88.3599 outstanding request = 35   V: 45, E: 0, M: 5, P: 0
+polled block 76 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 91.2097 outstanding request = 36   V: 48, E: 0, M: 2, P: 0
+polled block 77 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 9  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 93.4435 outstanding request = 29   V: 41, E: 0, M: 9, P: 0
+polled block 78 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 86.546 outstanding request = 30   V: 42, E: 0, M: 5, P: 0
+polled block 79 : 36 txs VALID: 36  ENDORSEMENT: 1  MVCC: 13  PHANTOM: 0
+In the last 2s, tx count = 19 latency = 69.4974 outstanding request = 41   V: 36, E: 1, M: 13, P: 0
+polled block 80 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 88.3849 outstanding request = 47   V: 44, E: 0, M: 6, P: 0
+polled block 81 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 32 latency = 128.227 outstanding request = 35   V: 44, E: 0, M: 6, P: 0
+polled block 82 : 44 txs VALID: 44  ENDORSEMENT: 1  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 98.5273 outstanding request = 27   V: 44, E: 1, M: 5, P: 0
+polled block 83 : 32 txs VALID: 32  ENDORSEMENT: 2  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 17 latency = 69.5503 outstanding request = 38   V: 32, E: 2, M: 7, P: 0
+polled block 84 : 36 txs VALID: 36  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 95.6101 outstanding request = 38   V: 36, E: 0, M: 11, P: 0
+polled block 85 : 42 txs VALID: 42  ENDORSEMENT: 1  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 90.517 outstanding request = 51   V: 42, E: 1, M: 7, P: 0
+polled block 86 : 48 txs VALID: 48  ENDORSEMENT: 0  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 92.6077 outstanding request = 61   V: 48, E: 0, M: 2, P: 0
+polled block 87 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 28 latency = 127.766 outstanding request = 58   V: 47, E: 0, M: 3, P: 0
+polled block 88 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 31 latency = 152.195 outstanding request = 57   V: 44, E: 0, M: 6, P: 0
+polled block 89 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 9  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 123.281 outstanding request = 61   V: 41, E: 0, M: 9, P: 0
+polled block 90 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+polled block 91 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 58 latency = 245.597 outstanding request = 31   V: 87, E: 0, M: 13, P: 0
+polled block 92 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 9  PHANTOM: 0
+In the last 2s, tx count = 29 latency = 95.4827 outstanding request = 30   V: 40, E: 0, M: 9, P: 0
+polled block 93 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 70.2441 outstanding request = 43   V: 39, E: 0, M: 11, P: 0
+polled block 94 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 98.62 outstanding request = 38   V: 43, E: 0, M: 7, P: 0
+polled block 95 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 95.5371 outstanding request = 36   V: 46, E: 0, M: 4, P: 0
+polled block 96 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 10  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 85.0348 outstanding request = 39   V: 40, E: 0, M: 10, P: 0
+polled block 97 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 98.6956 outstanding request = 41   V: 43, E: 0, M: 7, P: 0
+polled block 98 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 100.554 outstanding request = 40   V: 40, E: 0, M: 8, P: 0
+polled block 99 : 45 txs VALID: 45  ENDORSEMENT: 1  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 103.497 outstanding request = 41   V: 45, E: 1, M: 4, P: 0
+polled block 100 : 45 txs VALID: 45  ENDORSEMENT: 1  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 102.581 outstanding request = 33   V: 45, E: 1, M: 4, P: 0
+polled block 101 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 78.8047 outstanding request = 39   V: 42, E: 0, M: 7, P: 0
+polled block 102 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 1  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 97.5356 outstanding request = 42   V: 41, E: 0, M: 1, P: 0
+polled block 103 : 37 txs VALID: 37  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 105.096 outstanding request = 34   V: 37, E: 0, M: 3, P: 0
+polled block 104 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 103.684 outstanding request = 36   V: 39, E: 0, M: 6, P: 0
+polled block 105 : 43 txs VALID: 43  ENDORSEMENT: 1  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 16 latency = 66.1828 outstanding request = 43   V: 43, E: 1, M: 3, P: 0
+polled block 106 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 114.793 outstanding request = 49   V: 42, E: 0, M: 8, P: 0
+polled block 107 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 103.632 outstanding request = 57   V: 43, E: 0, M: 7, P: 0
+polled block 108 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 122.34 outstanding request = 55   V: 42, E: 0, M: 8, P: 0
+polled block 109 : 47 txs VALID: 47  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 30 latency = 146.981 outstanding request = 52   V: 47, E: 0, M: 3, P: 0
+polled block 110 : 45 txs VALID: 45  ENDORSEMENT: 1  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 127.339 outstanding request = 60   V: 45, E: 1, M: 4, P: 0
+polled block 111 : 40 txs VALID: 40  ENDORSEMENT: 2  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 124.343 outstanding request = 49   V: 40, E: 2, M: 7, P: 0
+polled block 112 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 31 latency = 150.268 outstanding request = 41   V: 44, E: 0, M: 6, P: 0
+polled block 113 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 15 latency = 72.3809 outstanding request = 51   V: 43, E: 0, M: 7, P: 0
+polled block 114 : 43 txs VALID: 43  ENDORSEMENT: 1  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 112.749 outstanding request = 48   V: 43, E: 1, M: 6, P: 0
+polled block 115 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 10  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 130.021 outstanding request = 39   V: 40, E: 0, M: 10, P: 0
+polled block 116 : 32 txs VALID: 32  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 19 latency = 91.6697 outstanding request = 44   V: 32, E: 0, M: 3, P: 0
+polled block 117 : 38 txs VALID: 38  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 87.8051 outstanding request = 47   V: 38, E: 0, M: 5, P: 0
+polled block 118 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 116.126 outstanding request = 55   V: 44, E: 0, M: 6, P: 0
+polled block 119 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 10  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 109.084 outstanding request = 59   V: 40, E: 0, M: 10, P: 0
+polled block 120 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 1  PHANTOM: 0
+In the last 2s, tx count = 31 latency = 147.98 outstanding request = 56   V: 46, E: 0, M: 1, P: 0
+polled block 121 : 45 txs VALID: 45  ENDORSEMENT: 1  MVCC: 4  PHANTOM: 0
+polled block 122 : 44 txs VALID: 44  ENDORSEMENT: 1  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 52 latency = 201.989 outstanding request = 31   V: 89, E: 2, M: 9, P: 0
+polled block 123 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 72.0115 outstanding request = 35   V: 44, E: 0, M: 6, P: 0
+polled block 124 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 94.5849 outstanding request = 40   V: 44, E: 0, M: 6, P: 0
+polled block 125 : 46 txs VALID: 46  ENDORSEMENT: 0  MVCC: 4  PHANTOM: 0
+In the last 2s, tx count = 25 latency = 91.2817 outstanding request = 47   V: 46, E: 0, M: 4, P: 0
+polled block 126 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 106.275 outstanding request = 36   V: 42, E: 0, M: 8, P: 0
+polled block 127 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 101.663 outstanding request = 39   V: 41, E: 0, M: 8, P: 0
+polled block 128 : 49 txs VALID: 49  ENDORSEMENT: 0  MVCC: 1  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 84.1225 outstanding request = 43   V: 49, E: 0, M: 1, P: 0
+polled block 129 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 109.594 outstanding request = 38   V: 45, E: 0, M: 3, P: 0
+polled block 130 : 43 txs VALID: 43  ENDORSEMENT: 1  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 101.543 outstanding request = 42   V: 43, E: 1, M: 2, P: 0
+polled block 131 : 40 txs VALID: 40  ENDORSEMENT: 4  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 92.0187 outstanding request = 50   V: 40, E: 4, M: 6, P: 0
+polled block 132 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 28 latency = 119.297 outstanding request = 46   V: 44, E: 0, M: 6, P: 0
+polled block 133 : 42 txs VALID: 42  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 99.8863 outstanding request = 53   V: 42, E: 0, M: 8, P: 0
+polled block 134 : 41 txs VALID: 41  ENDORSEMENT: 1  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 120.048 outstanding request = 48   V: 41, E: 1, M: 8, P: 0
+polled block 135 : 36 txs VALID: 36  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 126.126 outstanding request = 46   V: 36, E: 0, M: 7, P: 0
+polled block 136 : 35 txs VALID: 35  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 108.748 outstanding request = 39   V: 35, E: 0, M: 3, P: 0
+polled block 137 : 38 txs VALID: 38  ENDORSEMENT: 1  MVCC: 2  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 106.439 outstanding request = 40   V: 38, E: 1, M: 2, P: 0
+polled block 138 : 34 txs VALID: 34  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 19 latency = 83.3129 outstanding request = 48   V: 34, E: 0, M: 7, P: 0
+polled block 139 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 107.432 outstanding request = 43   V: 40, E: 0, M: 6, P: 0
+polled block 140 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 117.816 outstanding request = 38   V: 45, E: 0, M: 5, P: 0
+polled block 141 : 32 txs VALID: 32  ENDORSEMENT: 0  MVCC: 13  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 94.3314 outstanding request = 40   V: 32, E: 0, M: 13, P: 0
+polled block 142 : 46 txs VALID: 46  ENDORSEMENT: 1  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 20 latency = 87.0321 outstanding request = 44   V: 46, E: 1, M: 3, P: 0
+polled block 143 : 37 txs VALID: 37  ENDORSEMENT: 0  MVCC: 13  PHANTOM: 0
+In the last 2s, tx count = 23 latency = 102.588 outstanding request = 44   V: 37, E: 0, M: 13, P: 0
+polled block 144 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 102.76 outstanding request = 49   V: 43, E: 0, M: 7, P: 0
+polled block 145 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 27 latency = 118.802 outstanding request = 45   V: 44, E: 0, M: 6, P: 0
+polled block 146 : 44 txs VALID: 44  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 109.587 outstanding request = 44   V: 44, E: 0, M: 6, P: 0
+polled block 147 : 39 txs VALID: 39  ENDORSEMENT: 1  MVCC: 9  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 115.075 outstanding request = 32   V: 39, E: 1, M: 9, P: 0
+polled block 148 : 32 txs VALID: 32  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 19 latency = 85.9372 outstanding request = 39   V: 32, E: 0, M: 6, P: 0
+polled block 149 : 38 txs VALID: 38  ENDORSEMENT: 0  MVCC: 3  PHANTOM: 0
+In the last 2s, tx count = 18 latency = 75.9874 outstanding request = 37   V: 38, E: 0, M: 3, P: 0
+polled block 150 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 26 latency = 112.939 outstanding request = 32   V: 41, E: 0, M: 6, P: 0
+polled block 151 : 41 txs VALID: 41  ENDORSEMENT: 0  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 16 latency = 67.7173 outstanding request = 40   V: 41, E: 0, M: 8, P: 0
+polled block 152 : 45 txs VALID: 45  ENDORSEMENT: 0  MVCC: 5  PHANTOM: 0
+In the last 2s, tx count = 24 latency = 98.9576 outstanding request = 37   V: 45, E: 0, M: 5, P: 0
+polled block 153 : 43 txs VALID: 43  ENDORSEMENT: 1  MVCC: 6  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 90.9479 outstanding request = 51   V: 43, E: 1, M: 6, P: 0
+polled block 154 : 40 txs VALID: 40  ENDORSEMENT: 0  MVCC: 10  PHANTOM: 0
+In the last 2s, tx count = 21 latency = 94.2485 outstanding request = 52   V: 40, E: 0, M: 10, P: 0
+polled block 155 : 41 txs VALID: 41  ENDORSEMENT: 1  MVCC: 8  PHANTOM: 0
+In the last 2s, tx count = 30 latency = 139.977 outstanding request = 44   V: 41, E: 1, M: 8, P: 0
+polled block 156 : 39 txs VALID: 39  ENDORSEMENT: 0  MVCC: 11  PHANTOM: 0
+In the last 2s, tx count = 22 latency = 103.939 outstanding request = 53   V: 39, E: 0, M: 11, P: 0
+polled block 157 : 43 txs VALID: 43  ENDORSEMENT: 0  MVCC: 7  PHANTOM: 0
+In the last 2s, tx count = 19 latency = 93.9803 outstanding request = 61   V: 43, E: 0, M: 7, P: 0

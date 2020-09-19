@@ -4,9 +4,9 @@
 helpFunction()
 {
     echo ""
-    echo -e "./txrange.sh -b ycsb -T 4 -o 01 -s 300 -w workloada.spec"
-    echo -e "./txrange.sh -b donothing -T 4 -o 01 -s 300"
-    echo -e "./txrange.sh -b smallbank -T 4 -o 01 -n 1000 -f stat.txt -s 300"
+    echo -e "./msgrange.sh -b ycsb -T 4 -o 01 -s 300 -w workloada.spec"
+    echo -e "./msgrange.sh -b donothing -T 4 -o 01 -s 300"
+    echo -e "./msgrange.sh -b smallbank -T 4 -o 01 -n 1000 -f stat.txt -s 300"
     exit 1 # Exit script after printing help
 }
 
@@ -35,7 +35,7 @@ configpath="$HOME/blockbench/benchmark/fabric-v2.2/configtx/configtx.yaml"
 
 msgcount=(50 100 200 300)
 
-for index in ${!msgcount[@]}; do
+for index in ${msgcount[@]}; do
     sed -i -E "235s/[0-9]+/${index}/" $configpath
 
     if [ "$index" -lt "100" ]; then
@@ -45,9 +45,9 @@ for index in ${!msgcount[@]}; do
     fi
 
     echo ""
-    echo "Executing solofabric.sh with txrate: $index"
+    echo "Executing txrange.sh with message count: $index"
     echo ""
-    ./txrange.sh -b $benchmark -t $index -T $threads -o "$output_name/$msg_out" -s $stimeout -w $workload -n $ops -f $fp
+    ./txrange.sh -b $benchmark -T $threads -o "$output_name/$msg_out" -s $stimeout -w $workload -n $ops -f $fp
     
     
 done

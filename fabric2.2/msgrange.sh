@@ -4,9 +4,9 @@
 helpFunction()
 {
     echo ""
-    echo -e "./txrange.sh -b ycsb -T 16 -o 01 -O localhost:7041 -P localhost:7051 -s 300 -w workloada.spec -l 70 -u 160 -i 20"
-    echo -e "./txrange.sh -b donothing -T 16 -o 01 -O localhost:7041 -P localhost:7051 -s 300 -l 70 -u 160 -i 20"
-    echo -e "./txrange.sh -b smallbank -T 4 -o 01 -n 1000 -f stat.txt -O localhost:7041 -P localhost:7051 -s 300 -l 70 -u 160 -i 20"
+    echo -e "./txrange.sh -b ycsb -T 4 -o 01 -s 300 -w workloada.spec"
+    echo -e "./txrange.sh -b donothing -T 4 -o 01 -s 300"
+    echo -e "./txrange.sh -b smallbank -T 4 -o 01 -n 1000 -f stat.txt -s 300"
     exit 1 # Exit script after printing help
 }
 

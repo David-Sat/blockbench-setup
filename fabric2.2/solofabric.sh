@@ -27,12 +27,12 @@ startNetwork()
 {
     echo "Launch and setup"
     cd ~/blockbench/benchmark/fabric-v2.2
-    ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME} -d 6
+    ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME}
     sleep 5
 
     echo "Deploy Chaincode"
     CC_SRC_PATH="../contracts/fabric-v2.2/${CC_NAME}"
-    ./network.sh deployCC -ccn ${CC_NAME} -ccp ${CC_SRC_PATH} -d 6
+    ./network.sh deployCC -ccn ${CC_NAME} -ccp ${CC_SRC_PATH}
     sleep 5
 
     echo "Install dependencies and prepare identities"
@@ -49,7 +49,7 @@ startNetwork()
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8801 > txn-server-8801.log 2>&1 &
     sleep 1
     node txn-server.js ${CHANNEL_NAME} ${CC_NAME} ${MODE} 8802 > txn-server-8802.log 2>&1 &
-    sleep 10
+    sleep 15
 }
 
 
@@ -71,7 +71,7 @@ ycsbplusFunction(){
     #echo "cd ~/blockbench/src/macro/kvstore"
     #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint {$endpoint} -wl $benchmark -wt 20"
 
-    sleep 20
+    sleep 30
     cd $script_directory
     ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e $endpoint |& tee $output_dir
     

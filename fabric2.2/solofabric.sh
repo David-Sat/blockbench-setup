@@ -27,7 +27,14 @@ startNetwork()
 {
     echo "Launch and setup"
     cd ~/blockbench/benchmark/fabric-v2.2
-    ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME}
+
+    if [ "$database" = "couchdb" ]
+    then
+        ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME} -s couchdb
+    else
+        ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME}
+    fi
+
     sleep 5
 
     echo "Deploy Chaincode"
@@ -138,7 +145,7 @@ cpuheavyFunction(){
 }
 
 
-while getopts "b:w:t:T:s:o:n:f:w:" opt
+while getopts "b:w:t:T:s:o:n:f:w:d:" opt
 do
     case "$opt" in
         b ) benchmark="$OPTARG" ;;
@@ -149,6 +156,7 @@ do
         n ) ops="$OPTARG" ;;
         f ) fp="$OPTARG" ;;
         w ) workload="$OPTARG" ;;
+        d ) database="$OPTARG" ;;
         ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
     esac
 done

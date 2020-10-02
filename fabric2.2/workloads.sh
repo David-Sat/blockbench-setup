@@ -64,7 +64,7 @@ for index in ${workload_names[@]}; do
     echo ""
     echo "Executing workloads.sh with workload: $workload"
     echo ""
-    ./solofabric.sh -b $benchmark -T $threads -t $txrate -o "$output_name/$wlname"_"leveldb" -s $stimeout -w $workload
+    ./solofabric.sh -b $benchmark -T $threads -t $txrate -o "$output_name/$wlname"_"leveldb" -s $stimeout -w $workload -d couchdb
     
 done
 

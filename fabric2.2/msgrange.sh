@@ -42,6 +42,8 @@ then
     workload="none"
 fi
 
+mkdir results/$output_name
+
 configpath="$HOME/blockbench/benchmark/fabric-v2.2/configtx/configtx.yaml"
 
 msgcount=(50 100 200 300)

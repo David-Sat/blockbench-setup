@@ -44,6 +44,6 @@ while [ $i -le $end ]; do
     else
         txr_out="$i"
     fi
-    ./solofabric.sh -b $benchmark -t $i -T $threads -o "$output_name"_"$txr_out" -s $stimeout -w $workload -n $ops -f $fp
+    ./solofabric.sh -b $benchmark -t $i -T $threads -o "$output_name"_"$txr_out" -s $stimeout -w $workload -n $ops -f $fp -d couchdb
     i=$(($i+$interval))
 done 

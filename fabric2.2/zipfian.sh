@@ -49,7 +49,7 @@ mkdir results/$output_name
 zipfianpath="$HOME/blockbench/src/macro/kvstore/core/zipfian_generator.h"
 
 
-zipfianconst=(0.0 1.0 2.0)
+zipfianconst=(0.0 0.5 1.0 1.5 2.0 2.5 3.0)
 
 for index in ${zipfianconst[@]}; do
     sed -i -E "21s/[0-9]+\.[0-9]+/${index}/" $zipfianpath

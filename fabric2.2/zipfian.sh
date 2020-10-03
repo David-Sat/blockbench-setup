@@ -70,7 +70,7 @@ for index in ${zipfianconst[@]}; do
 done
 
 
-sed -i -E "21s/[0-9]+\.[0-9]+/1/" $zipfianpath
+sed -i -E "21s/[0-9]+\.[0-9]+/1.0/" $zipfianpath
 
 cd $HOME/blockbench/src/macro/kvstore
 make clean

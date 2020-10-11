@@ -169,8 +169,13 @@ fi
 
 
 case $benchmark in
-    ycsb|donothing)
+    ycsb)
         CC_NAME=kvstore
+        MODE=open_loop
+        ycsbplusFunction
+        ;;
+    donothing)
+        CC_NAME=donothing
         MODE=open_loop
         ycsbplusFunction
         ;;

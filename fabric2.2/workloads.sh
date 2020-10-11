@@ -50,7 +50,7 @@ mkdir results/$output_name
 
 #workload_names=(a b c d e f g h i j k)
 workload_names=(f f f f f)
-
+i=0
 #workload_names=(8 9 10)
 
 echo
@@ -60,12 +60,13 @@ echo
 for index in ${workload_names[@]}; do
     workload="rw_""$index"".spec"
     wlname="rw_""$index"
-
+    
 
     echo ""
     echo "Executing workloads.sh with workload: $workload"
     echo ""
-    ./solofabric.sh -b $benchmark -T $threads -t $txrate -o "$output_name/$wlname"_"leveldb" -s $stimeout -w $workload -d couchdb
+    ./solofabric.sh -b $benchmark -T $threads -t $txrate -o "$output_name/$wlname"_"$i" -s $stimeout -w $workload
+    i=$((i+1))
     
 done
 

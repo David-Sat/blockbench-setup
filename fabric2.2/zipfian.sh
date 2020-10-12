@@ -51,7 +51,7 @@ zipfianpath="$HOME/blockbench/src/macro/kvstore/core/zipfian_generator.h"
 # zipfian constant has to be float
 #zipfianconst=(0.0 0.5 1.0 1.5 2.0 2.5 3.0)
 
-zipfianconst=(0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0)
+zipfianconst=(0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5)
 
 for index in ${zipfianconst[@]}; do
     sed -i -E "21s/[0-9]+\.[0-9]+/${index}/" $zipfianpath

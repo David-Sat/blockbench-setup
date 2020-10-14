@@ -7,6 +7,8 @@ leveldb_function()
     i=1
     end=5
 
+    mkdir results/leveldb
+
     while [ $i -le $end ]; do
         if [ "$i" -lt "100" ]; then
             txr_out="0""$i"
@@ -23,6 +25,8 @@ couchdb_function()
     interval=1
     i=1
     end=5
+
+    mkdir results/couchdb
 
     while [ $i -le $end ]; do
         if [ "$i" -lt "100" ]; then

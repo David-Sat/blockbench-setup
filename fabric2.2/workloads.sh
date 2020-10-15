@@ -48,8 +48,8 @@ mkdir results/$output_name
 
 #workload_names=(0 1 2 3 4 5 6 7 8 9 10)
 
-#workload_names=(a b c d e f g h i j k)
-workload_names=(f f f f f)
+workload_names=(a b c d e f g h i j k)
+#workload_names=(f f f f f)
 i=0
 #workload_names=(8 9 10)
 

@@ -49,11 +49,13 @@ mkdir results/$output_name
 zipfianpath="$HOME/blockbench/src/macro/kvstore/core/zipfian_generator.h"
 
 # zipfian constant has to be float
-#zipfianconst=(0.0 0.5 1.0 1.5 2.0 2.5 3.0)
-
+#zipfianconst=(0.0 0.5 1.0 1.5 2.0 2.5 3.0)#
 #zipfianconst=(0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.99 1.01 1.1 1.2 1.3 1.4 1.5)
+#zipfianconst=(0.9 0.92 0.94 0.96 0.98 0.999 1.001 1.02 1.04 1.06 1.08 1.1)
+zipfianconst=(-2.1 -1.9 -1.7 -1.5 -1.3 -1.1 -0.9 -0.7 -0.5 -0.3 -0.1 0.1 0.3 0.5 0.7 0.9 1.1 1.3 1.5 1.7 1.9 2.1)
 
-zipfianconst=(0.9 0.92 0.94 0.96 0.98 0.999 1.001 1.02 1.04 1.06 1.08 1.1)
+interval=1
+i=1
 
 for index in ${zipfianconst[@]}; do
     sed -i -E "21s/[0-9]+\.[0-9]+/${index}/" $zipfianpath
@@ -64,17 +66,18 @@ for index in ${zipfianconst[@]}; do
     cd $HOME/blockbench-setup/fabric2.2
 
 
-    zipfian_out="$index"
+    zipfian_out="$i"
 
     echo ""
     echo "Executing solofabric.sh with zipfian constant: $index"
     echo ""
     ./solofabric.sh -b $benchmark -t $txrate -T $threads -o "$output_name/$zipfian_out" -s $stimeout -w $workload -n $ops -f $fp
-    
+
+    i=$(($i+$interval))
 done
 
 
-sed -i -E "21s/[0-9]+\.[0-9]+/1.0/" $zipfianpath
+sed -i -E "21s/[0-9]+\.[0-9]+/0.99/" $zipfianpath
 
 cd $HOME/blockbench/src/macro/kvstore
 make clean

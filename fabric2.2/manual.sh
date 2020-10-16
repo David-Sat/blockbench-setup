@@ -2,12 +2,12 @@
 
 
 ycsb_leveldb_function()
-{
+{   
     interval=1
     i=1
     end=5
 
-    mkdir results/leveldb2
+    mkdir results/sm_workload
 
     while [ $i -le $end ]; do
         if [ "$i" -lt "100" ]; then
@@ -15,7 +15,7 @@ ycsb_leveldb_function()
         else
             txr_out="$i"
         fi
-        ./solofabric.sh -b ycsb -t 100 -T 16 -o "leveldb2/$i"_"leveldb2" -s 300 -w rw_d.spec
+        ./solofabric.sh -b ycsb -t 100 -T 16 -o "sm_workload/$i"_"sm_workload" -s 300 -w sm_workload.spec
         i=$(($i+$interval))
     done 
 }
@@ -78,10 +78,34 @@ smallbank_leveldb_function()
 }
 
 
+zipfian_function()
+{
+    interval=1
+    i=1
+    end=5
+
+
+    while [ $i -le $end ]; do
+        if [ "$i" -lt "100" ]; then
+            txr_out="0""$i"
+        else
+            txr_out="$i"
+        fi
+
+        
+
+        ./zipfian.sh -b ycsb -t 100 -T 16 -o "zipfian_$i" -s 300 -w rw_d.spec
+        i=$(($i+$interval))
+    done 
+}
+
 
 
 #ycsb_leveldb_function
 #ycsb_couchdb_function
 
-smallbank_couchdb_function
-smallbank_leveldb_function
+#smallbank_couchdb_function
+#smallbank_leveldb_function
+
+zipfian_function
+ycsb_leveldb_function

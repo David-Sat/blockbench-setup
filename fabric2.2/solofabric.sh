@@ -73,12 +73,12 @@ ycsbplusFunction(){
 
     startNetwork
 
-    cd ~/blockbench/src/macro/kvstore
+    #cd ~/blockbench/src/macro/kvstore
     echo "execute driver"
     #echo "cd ~/blockbench/src/macro/kvstore"
     #echo "./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint ${endpoint} -wl $benchmark -wt 20"
 
-    sleep 30
+    sleep 5
     cd $script_directory
     ./macrodriver.sh -b $benchmark -t $txrate -T $threads -s $stimeout -w $workload -e $endpoint |& tee $output_dir
     

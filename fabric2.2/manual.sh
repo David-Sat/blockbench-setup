@@ -64,7 +64,7 @@ smallbank_leveldb_function()
     i=1
     end=5
 
-    mkdir results/smallbank_lv
+    mkdir results/smallbank_comp
 
     while [ $i -le $end ]; do
         if [ "$i" -lt "100" ]; then
@@ -72,7 +72,7 @@ smallbank_leveldb_function()
         else
             txr_out="$i"
         fi
-        ./solofabric.sh -b smallbank -t 100 -T 16 -o "smallbank_lv/$i"_"sm_leveldb" -s 300 -n 10000000 -f stat.txt
+        ./solofabric.sh -b smallbank -t 100 -T 16 -o "smallbank_comp/$i"_"sb_comp" -s 300 -n 10000000 -f stat.txt
         i=$(($i+$interval))
     done 
 }
@@ -108,4 +108,8 @@ zipfian_function()
 #smallbank_leveldb_function
 
 zipfian_function
-ycsb_leveldb_function
+smallbank_leveldb_function
+
+./workloads.sh -b ycsb -T 16 -t 100 -o read_write1 -s 300
+
+

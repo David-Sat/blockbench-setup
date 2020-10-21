@@ -107,9 +107,11 @@ zipfian_function()
 #smallbank_couchdb_function
 #smallbank_leveldb_function
 
-zipfian_function
-smallbank_leveldb_function
+#zipfian_function
+#smallbank_leveldb_function
 
-./workloads.sh -b ycsb -T 16 -t 100 -o read_write1 -s 300
-
-
+./workloads.sh -b ycsb -T 16 -t 100 -o rc1 -s 300
+./workloads.sh -b ycsb -T 16 -t 100 -o rc2 -s 300
+./workloads.sh -b ycsb -T 16 -t 100 -o rc3 -s 300
+./workloads.sh -b ycsb -T 16 -t 100 -o rc4 -s 300
+./workloads.sh -b ycsb -T 16 -t 100 -o rc5 -s 300

@@ -58,8 +58,8 @@ echo "Starting benchmark with goleveldb"
 echo
 
 for index in ${workload_names[@]}; do
-    workload="rw_""$index"".spec"
-    wlname="rw_""$index"
+    workload="rc_""$index"".spec"
+    wlname="rc_""$index"
     
 
     echo ""

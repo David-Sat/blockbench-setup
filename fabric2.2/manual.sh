@@ -123,7 +123,7 @@ zipfian_function()
 ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
-./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
+#./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
+#./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
 
 

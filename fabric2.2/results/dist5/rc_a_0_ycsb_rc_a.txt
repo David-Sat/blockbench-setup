@@ -1,0 +1,13 @@
+benchmark=ycsb
+txrate=100
+threads=16
+endpoint=localhost:8800,localhost:8801,localhost:8802
+zipfian_const=unknown
+stimeout=300
+workload=rc_a.spec
+
+Make sure to deploy YCSB chaincode based on README.md. 
+Current TIP = 5
+driver: zipfian_generator.h:28: ycsbc::ZipfianGenerator::ZipfianGenerator(uint64_t, uint64_t, double): Assertion `num_items_ >= 2 && num_items_ < kMaxNumItems' failed.
+timeout: the monitored command dumped core
+./macrodriver.sh: line 60:  1197 Aborted                 timeout $stimeout ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint ${endpoint} -wl $benchmark -wt 20

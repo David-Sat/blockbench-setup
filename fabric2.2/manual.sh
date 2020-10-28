@@ -178,17 +178,19 @@ zipfian_function()
 # ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
-#./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
-#./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange4 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange5 -s 300 -w workloada.spec
 
 
-smallbank_function
+# smallbank_function
 
-smallbankpath="$HOME/blockbench/src/macro/smallbank/smallbank.cc"
+# smallbankpath="$HOME/blockbench/src/macro/smallbank/smallbank.cc"
 
-sed -i -E "44s/[0-9]+/1000/" $smallbankpath
+# sed -i -E "44s/[0-9]+/1000/" $smallbankpath
 
-cd $HOME/blockbench/src/macro/smallbank
-make clean
-make
-cd $HOME/blockbench-setup/fabric2.2
+# cd $HOME/blockbench/src/macro/smallbank
+# make clean
+# make
+# cd $HOME/blockbench-setup/fabric2.2

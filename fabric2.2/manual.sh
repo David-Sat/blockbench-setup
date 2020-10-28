@@ -20,6 +20,8 @@ ycsb_leveldb_function()
     done 
 }
 
+
+
 ycsb_couchdb_function()
 {
     interval=1
@@ -77,6 +79,59 @@ smallbank_leveldb_function()
     done 
 }
 
+smallbank_function()
+{
+    mkdir results/smallbank_recordcount
+    smallbankpath="$HOME/blockbench/src/macro/smallbank/smallbank.cc"
+
+    recordcount=(200 400 600 800 1000 1200 1400 1600 1800 2000)
+
+    for index in ${recordcount[@]}; do
+        sed -i -E "44s/[0-9]+/${index}/" $smallbankpath
+
+        cd $HOME/blockbench/src/macro/smallbank
+        make clean
+        make
+        cd $HOME/blockbench-setup/fabric2.2
+
+        if [ "$index" -lt "1000" ]; then
+            rcc_out="0""$index"
+        else
+            rcc_out="$index"
+        fi
+
+
+        interval=1
+        i=1
+        end=5
+
+        while [ $i -le $end ]; do
+            ./solofabric.sh -b smallbank -t 100 -T 16 -o "smallbank_recordcount/$rcc_out"_"$i"_"sb_rcc" -s 300 -n 10000000 -f stat.txt
+            i=$(($i+$interval))
+        done 
+    done
+}
+
+for index in ${msgcount[@]}; do
+    sed -i -E "235s/[0-9]+/${index}/" $configpath
+
+    if [ "$index" -lt "100" ]; then
+        msg_out="0""$index"
+    else
+        msg_out="$index"
+    fi
+
+    echo ""
+    echo "Executing txrange.sh with message count: $index"
+    echo ""
+    ./txrange.sh -b $benchmark -T $threads -o "$output_name/$msg_out" -s $stimeout -w $workload -n $ops -f $fp
+    
+    
+done
+
+sed -i -E "235s/[0-9]+/200/" $configpath
+
+
 
 zipfian_function()
 {
@@ -116,14 +171,24 @@ zipfian_function()
 #./workloads.sh -b ycsb -T 16 -t 100 -o rc4 -s 300
 #./workloads.sh -b ycsb -T 16 -t 100 -o rc5 -s 300
 
-./workloads.sh -b ycsb -T 16 -t 100 -o dist1 -s 300
-./workloads.sh -b ycsb -T 16 -t 100 -o dist2 -s 300
-./workloads.sh -b ycsb -T 16 -t 100 -o dist3 -s 300
-./workloads.sh -b ycsb -T 16 -t 100 -o dist4 -s 300
-./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
+# ./workloads.sh -b ycsb -T 16 -t 100 -o dist1 -s 300
+# ./workloads.sh -b ycsb -T 16 -t 100 -o dist2 -s 300
+# ./workloads.sh -b ycsb -T 16 -t 100 -o dist3 -s 300
+# ./workloads.sh -b ycsb -T 16 -t 100 -o dist4 -s 300
+# ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
 #./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
 #./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
 
 
+smallbank_function
+
+smallbankpath="$HOME/blockbench/src/macro/smallbank/smallbank.cc"
+
+sed -i -E "44s/[0-9]+/1000/" $smallbankpath
+
+cd $HOME/blockbench/src/macro/smallbank
+make clean
+make
+cd $HOME/blockbench-setup/fabric2.2

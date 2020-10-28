@@ -46,8 +46,8 @@ mkdir results/$output_name
 
 configpath="$HOME/blockbench/benchmark/fabric-v2.2/configtx/configtx.yaml"
 
-#msgcount=(50 100 200 300)
-msgcount=(400 500)
+msgcount=(50 100 200 300)
+#msgcount=(400 500)
 
 for index in ${msgcount[@]}; do
     sed -i -E "235s/[0-9]+/${index}/" $configpath
@@ -66,4 +66,4 @@ for index in ${msgcount[@]}; do
     
 done
 
-sed -i -E "235s/[0-9]+/100/" $configpath
+sed -i -E "235s/[0-9]+/200/" $configpath

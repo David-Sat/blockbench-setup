@@ -20,6 +20,25 @@ ycsb_leveldb_function()
     done 
 }
 
+donothing_function()
+{   
+    interval=1
+    i=1
+    end=5
+
+    mkdir results/donothing
+
+    while [ $i -le $end ]; do
+        if [ "$i" -lt "100" ]; then
+            txr_out="0""$i"
+        else
+            txr_out="$i"
+        fi
+        ./solofabric.sh -b ycsb -t 100 -T 16 -o "sm_workload/$i"_"sm_workload" -s 300 -w sm_workload.spec
+        i=$(($i+$interval))
+    done 
+}
+
 
 
 ycsb_couchdb_function()
@@ -178,10 +197,10 @@ zipfian_function()
 # ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
-./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o msgrange4 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o msgrange5 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o msgrange4 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o msgrange5 -s 300 -w workloada.spec
 
 
 # smallbank_function
@@ -194,3 +213,10 @@ zipfian_function()
 # make clean
 # make
 # cd $HOME/blockbench-setup/fabric2.2
+
+
+./workloads.sh -b donothing -T 16 -t 100 -o rcdn1 -s 300
+./workloads.sh -b donothing -T 16 -t 100 -o rcdn2 -s 300
+./workloads.sh -b donothing -T 16 -t 100 -o rcdn3 -s 300
+./workloads.sh -b donothing -T 16 -t 100 -o rcdn4 -s 300
+./workloads.sh -b donothing -T 16 -t 100 -o rcdn5 -s 300

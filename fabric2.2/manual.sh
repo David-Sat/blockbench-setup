@@ -197,10 +197,23 @@ zipfian_function()
 # ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
-# ./msgrange.sh -b ycsb -T 16 -o msgrange2 -s 300 -w workloada.spec
-# ./msgrange.sh -b ycsb -T 16 -o msgrange3 -s 300 -w workloada.spec
-# ./msgrange.sh -b ycsb -T 16 -o msgrange4 -s 300 -w workloada.spec
-# ./msgrange.sh -b ycsb -T 16 -o msgrange5 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb1 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb2 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb3 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb4 -s 300 -w workloada.spec
+./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb5 -s 300 -w workloada.spec
+
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank1 -s 300 -w workloada.spec
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank2 -s 300 -w workloada.spec
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank3 -s 300 -w workloada.spec
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank4 -s 300 -w workloada.spec
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank5 -s 300 -w workloada.spec
+
+./msgrange.sh -b donothing -T 16 -o msgrange_donothing1 -s 300 -w workloada.spec
+./msgrange.sh -b donothing -T 16 -o msgrange_donothing2 -s 300 -w workloada.spec
+./msgrange.sh -b donothing -T 16 -o msgrange_donothing3 -s 300 -w workloada.spec
+./msgrange.sh -b donothing -T 16 -o msgrange_donothing4 -s 300 -w workloada.spec
+./msgrange.sh -b donothing -T 16 -o msgrange_donothing5 -s 300 -w workloada.spec
 
 
 # smallbank_function
@@ -215,8 +228,10 @@ zipfian_function()
 # cd $HOME/blockbench-setup/fabric2.2
 
 
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn1 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn2 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn3 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn4 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn5 -s 300
+# ./workloads.sh -b donothing -T 16 -t 100 -o rcdn1 -s 300
+# ./workloads.sh -b donothing -T 16 -t 100 -o rcdn2 -s 300
+# ./workloads.sh -b donothing -T 16 -t 100 -o rcdn3 -s 300
+# ./workloads.sh -b donothing -T 16 -t 100 -o rcdn4 -s 300
+# ./workloads.sh -b donothing -T 16 -t 100 -o rcdn5 -s 300
+
+

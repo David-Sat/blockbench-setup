@@ -31,19 +31,30 @@ then
     helpFunction
 fi
 
+txr=(10 50 100 200 300 400 500)
 
 
+# interval=10
+# i=100
+# end=50
 
-interval=100
-i=100
-end=500
+# while [ $i -le $end ]; do
+#     if [ "$i" -lt "100" ]; then
+#         txr_out="0""$i"
+#     else
+#         txr_out="$i"
+#     fi
+#     ./solofabric.sh -b $benchmark -t $i -T $threads -o "$output_name"_"$txr_out" -s $stimeout -w $workload -n $ops -f $fp
+#     i=$(($i+$interval))
+# done 
 
-while [ $i -le $end ]; do
+
+for i in ${txr[@]}; do
     if [ "$i" -lt "100" ]; then
         txr_out="0""$i"
     else
         txr_out="$i"
     fi
-    ./solofabric.sh -b $benchmark -t $i -T $threads -o "$output_name"_"$txr_out" -s $stimeout -w $workload -n $ops -f $fp -d couchdb
-    i=$(($i+$interval))
-done 
+    ./solofabric.sh -b $benchmark -t $i -T $threads -o "$output_name"_"$txr_out" -s $stimeout -w $workload -n $ops -f $fp
+
+done

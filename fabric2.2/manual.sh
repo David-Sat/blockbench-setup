@@ -228,10 +228,4 @@ zipfian_function()
 # cd $HOME/blockbench-setup/fabric2.2
 
 
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn1 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn2 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn3 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn4 -s 300
-./workloads.sh -b donothing -T 16 -t 100 -o rcdn5 -s 300
-
 

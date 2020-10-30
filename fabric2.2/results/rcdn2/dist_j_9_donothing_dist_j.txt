@@ -1,0 +1,12 @@
+benchmark=donothing
+txrate=100
+threads=16
+endpoint=localhost:8800,localhost:8801,localhost:8802
+zipfian_const=unknown
+stimeout=300
+workload=dist_j.spec
+
+terminate called after throwing an instance of 'utils::Exception'
+  what():  File not open!
+timeout: the monitored command dumped core
+./macrodriver.sh: line 60:  9149 Aborted                 timeout $stimeout ./driver -db fabric-v2.2 -threads $threads -P workloads/$workload -txrate $txrate -endpoint ${endpoint} -wl $benchmark -wt 20

@@ -1,0 +1,13 @@
+benchmark=smallbank
+txrate=100
+threads=16
+endpoint=localhost:8800,localhost:8801,localhost:8802
+zipfian_const=unknown
+stimeout=300
+workload=none
+
+Current TIP = 5
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  stoi
+timeout: the monitored command dumped core
+./macrodriver.sh: line 60: 13686 Aborted                 timeout $stimeout ./driver -db fabric-v2.2 -ops $ops -threads $threads -txrate $txrate -fp $fp -endpoint ${endpoint} -wt 20

@@ -203,17 +203,17 @@ zipfian_function()
 # ./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb4 -s 300 -w workloada.spec
 # ./msgrange.sh -b ycsb -T 16 -o msgrange_ycsb5 -s 300 -w workloada.spec
 
-# ./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank1 -s 300 -w workloada.spec
-# ./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank2 -s 300 -w workloada.spec
-# ./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank3 -s 300 -w workloada.spec
-# ./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank4 -s 300 -w workloada.spec
-# ./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank5 -s 300 -w workloada.spec
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank1 -s 300 -n 10000000 -f stat.txt
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank2 -s 300 -n 10000000 -f stat.txt
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank3 -s 300 -n 10000000 -f stat.txt
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank4 -s 300 -n 10000000 -f stat.txt
+./msgrange.sh -b smallbank -T 16 -o msgrange_smallbank5 -s 300 -n 10000000 -f stat.txt
 
-./msgrange.sh -b donothing -T 16 -o msgrange_donothing1 -s 300 -w rw_k.spec
-./msgrange.sh -b donothing -T 16 -o msgrange_donothing2 -s 300 -w rw_k.spec
-./msgrange.sh -b donothing -T 16 -o msgrange_donothing3 -s 300 -w rw_k.spec
-./msgrange.sh -b donothing -T 16 -o msgrange_donothing4 -s 300 -w rw_k.spec
-./msgrange.sh -b donothing -T 16 -o msgrange_donothing5 -s 300 -w rw_k.spec
+# ./msgrange.sh -b donothing -T 16 -o msgrange_donothing1 -s 300 -w rw_k.spec
+# ./msgrange.sh -b donothing -T 16 -o msgrange_donothing2 -s 300 -w rw_k.spec
+# ./msgrange.sh -b donothing -T 16 -o msgrange_donothing3 -s 300 -w rw_k.spec
+# ./msgrange.sh -b donothing -T 16 -o msgrange_donothing4 -s 300 -w rw_k.spec
+# ./msgrange.sh -b donothing -T 16 -o msgrange_donothing5 -s 300 -w rw_k.spec
 
 
 # smallbank_function

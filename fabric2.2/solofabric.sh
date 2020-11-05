@@ -30,9 +30,9 @@ startNetwork()
 
     if [ "$database" = "couchdb" ]
     then
-        ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME} -s couchdb
+        ./network.sh up createChannel -ca -i 1.4 -c ${CHANNEL_NAME} -s couchdb
     else
-        ./network.sh up createChannel -ca -i 2.2 -c ${CHANNEL_NAME}
+        ./network.sh up createChannel -ca -i 1.4 -c ${CHANNEL_NAME}
     fi
 
     sleep 5

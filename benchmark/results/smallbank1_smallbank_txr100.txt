@@ -1,0 +1,203 @@
+Configuring workload and deploying chaincode
+npm WARN blockbench@0.1.0 No description
+npm WARN blockbench@0.1.0 No repository field.
+
+audited 246 packages in 1.513s
+
+4 packages are looking for funding
+  run `npm fund` for details
+
+found 10 vulnerabilities (6 low, 2 moderate, 2 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+CCNAME:  smallbank
+Successfully install chaincode smallbank on peer localhost:7051
+Successfully install chaincode smallbank on peer localhost:6051
+Successfully install chaincode smallbank on peer localhost:8051
+Successfully install chaincode smallbank on peer localhost:9051
+Successfully instantiate chaincode smallbank on anchor peer localhost:7051
+benchmark=smallbank
+txrate=100
+threads=16
+ordereraddress=localhost:7041
+peeraddress=localhost:7051
+stimeout=600
+fp=stat.txt
+ops=1000000
+
+Make sure to call deploy.sh manually at the server side.
+Current TIP = 2
+In the last 2s, tx count = 0 latency = 0 outstanding request = 10 s: 1.84804
+In the last 2s, tx count = 0 latency = 0 outstanding request = 18 s: 3.22196
+V: 17 E: 0 M: 3 P: 0
+V: 2 E: 0 M: 25 P: 0
+In the last 2s, tx count = 19 latency = 154.436 outstanding request = 98 s: 13.1779
+V: 16 E: 0 M: 1 P: 0
+V: 4 E: 0 M: 15 P: 0
+V: 22 E: 0 M: 0 P: 0
+V: 8 E: 0 M: 12 P: 0
+In the last 2s, tx count = 50 latency = 651.099 outstanding request = 190 s: 27.9224
+V: 3 E: 0 M: 17 P: 0
+V: 16 E: 0 M: 3 P: 0
+V: 12 E: 0 M: 11 P: 0
+V: 6 E: 0 M: 11 P: 0
+V: 2 E: 0 M: 17 P: 0
+V: 3 E: 0 M: 19 P: 0
+V: 2 E: 0 M: 17 P: 0
+In the last 2s, tx count = 44 latency = 920.971 outstanding request = 387 s: 53.1578
+V: 2 E: 0 M: 16 P: 0
+V: 16 E: 0 M: 5 P: 0
+V: 20 E: 0 M: 0 P: 0
+V: 14 E: 0 M: 6 P: 0
+V: 11 E: 0 M: 8 P: 0
+V: 22 E: 0 M: 0 P: 0
+V: 17 E: 0 M: 2 P: 0
+V: 2 E: 0 M: 18 P: 0
+V: 3 E: 0 M: 21 P: 0
+V: 16 E: 0 M: 3 P: 0
+V: 6 E: 0 M: 12 P: 0
+V: 14 E: 0 M: 10 P: 0
+In the last 2s, tx count = 143 latency = 5202.76 outstanding request = 659 s: 96.553
+V: 3 E: 0 M: 17 P: 0
+V: 3 E: 0 M: 13 P: 0
+V: 5 E: 0 M: 13 P: 0
+V: 15 E: 0 M: 4 P: 0
+V: 9 E: 0 M: 10 P: 0
+V: 18 E: 0 M: 1 P: 0
+V: 9 E: 0 M: 13 P: 0
+V: 6 E: 0 M: 12 P: 0
+V: 15 E: 0 M: 5 P: 0
+V: 11 E: 0 M: 8 P: 0
+V: 19 E: 0 M: 2 P: 0
+V: 7 E: 0 M: 12 P: 0
+V: 9 E: 0 M: 14 P: 0
+V: 11 E: 0 M: 6 P: 0
+V: 8 E: 0 M: 15 P: 0
+V: 17 E: 0 M: 4 P: 0
+V: 13 E: 0 M: 6 P: 0
+V: 4 E: 0 M: 17 P: 0
+V: 4 E: 0 M: 18 P: 0
+V: 4 E: 0 M: 16 P: 0
+V: 11 E: 0 M: 10 P: 0
+In the last 2s, tx count = 201 latency = 12250.2 outstanding request = 1155 s: 169.665
+V: 11 E: 0 M: 7 P: 0
+V: 11 E: 0 M: 9 P: 0
+V: 7 E: 0 M: 18 P: 0
+V: 7 E: 0 M: 13 P: 0
+V: 14 E: 0 M: 4 P: 0
+V: 15 E: 0 M: 4 P: 0
+V: 13 E: 0 M: 10 P: 0
+V: 16 E: 0 M: 3 P: 0
+V: 8 E: 0 M: 11 P: 0
+V: 6 E: 0 M: 12 P: 0
+V: 17 E: 0 M: 5 P: 0
+V: 7 E: 0 M: 11 P: 0
+V: 11 E: 0 M: 12 P: 0
+V: 4 E: 0 M: 17 P: 0
+V: 4 E: 0 M: 16 P: 0
+V: 8 E: 0 M: 12 P: 0
+V: 12 E: 0 M: 8 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 4 E: 0 M: 14 P: 0
+V: 7 E: 0 M: 12 P: 0
+V: 11 E: 0 M: 9 P: 0
+V: 12 E: 0 M: 8 P: 0
+V: 11 E: 0 M: 9 P: 0
+V: 5 E: 0 M: 14 P: 0
+V: 4 E: 0 M: 15 P: 0
+V: 4 E: 0 M: 16 P: 0
+V: 4 E: 0 M: 17 P: 0
+V: 4 E: 0 M: 17 P: 0
+V: 5 E: 0 M: 13 P: 0
+V: 5 E: 0 M: 18 P: 0
+V: 4 E: 0 M: 14 P: 0
+V: 7 E: 0 M: 14 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 10 E: 0 M: 10 P: 0
+In the last 2s, tx count = 284 latency = 27138.3 outstanding request = 2017 s: 288.061
+V: 10 E: 0 M: 13 P: 0
+V: 10 E: 0 M: 8 P: 0
+V: 11 E: 0 M: 10 P: 0
+V: 15 E: 0 M: 4 P: 0
+V: 14 E: 0 M: 8 P: 0
+V: 5 E: 0 M: 13 P: 0
+V: 5 E: 0 M: 15 P: 0
+V: 5 E: 0 M: 16 P: 0
+V: 5 E: 0 M: 14 P: 0
+V: 4 E: 0 M: 15 P: 0
+V: 5 E: 0 M: 17 P: 0
+V: 5 E: 0 M: 15 P: 0
+V: 5 E: 0 M: 16 P: 0
+V: 5 E: 0 M: 14 P: 0
+V: 9 E: 0 M: 11 P: 0
+V: 11 E: 0 M: 9 P: 0
+V: 11 E: 0 M: 10 P: 0
+V: 10 E: 0 M: 11 P: 0
+V: 10 E: 0 M: 11 P: 0
+V: 8 E: 0 M: 12 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 5 E: 0 M: 17 P: 0
+V: 6 E: 0 M: 15 P: 0
+V: 16 E: 0 M: 4 P: 0
+V: 18 E: 0 M: 1 P: 0
+V: 20 E: 0 M: 0 P: 0
+V: 20 E: 0 M: 0 P: 0
+V: 22 E: 0 M: 0 P: 0
+V: 19 E: 0 M: 1 P: 0
+V: 17 E: 0 M: 7 P: 0
+V: 12 E: 0 M: 6 P: 0
+V: 8 E: 0 M: 12 P: 0
+V: 10 E: 0 M: 12 P: 0
+V: 12 E: 0 M: 11 P: 0
+V: 5 E: 0 M: 16 P: 0
+V: 7 E: 0 M: 13 P: 0
+V: 12 E: 0 M: 10 P: 0
+V: 9 E: 0 M: 11 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 11 E: 0 M: 10 P: 0
+V: 14 E: 0 M: 5 P: 0
+V: 20 E: 0 M: 5 P: 0
+V: 15 E: 0 M: 6 P: 0
+V: 11 E: 0 M: 13 P: 0
+V: 12 E: 0 M: 5 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 13 E: 0 M: 7 P: 0
+V: 6 E: 0 M: 19 P: 0
+V: 6 E: 0 M: 12 P: 0
+V: 7 E: 0 M: 13 P: 0
+V: 6 E: 0 M: 16 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 6 E: 0 M: 15 P: 0
+V: 10 E: 0 M: 10 P: 0
+In the last 2s, tx count = 566 latency = 92135.1 outstanding request = 3299 s: 485.96
+V: 11 E: 0 M: 10 P: 0
+V: 8 E: 0 M: 12 P: 0
+V: 7 E: 0 M: 10 P: 0
+V: 11 E: 0 M: 11 P: 0
+V: 10 E: 0 M: 9 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 6 E: 0 M: 13 P: 0
+V: 5 E: 0 M: 14 P: 0
+V: 6 E: 0 M: 17 P: 0
+V: 8 E: 0 M: 11 P: 0
+V: 12 E: 0 M: 7 P: 0
+V: 18 E: 0 M: 3 P: 0
+V: 15 E: 0 M: 4 P: 0
+V: 10 E: 0 M: 8 P: 0
+V: 6 E: 0 M: 11 P: 0
+V: 6 E: 0 M: 14 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 14 E: 0 M: 5 P: 0
+V: 18 E: 0 M: 2 P: 0
+V: 14 E: 0 M: 5 P: 0
+V: 9 E: 0 M: 13 P: 0
+V: 7 E: 0 M: 11 P: 0
+V: 9 E: 0 M: 13 P: 0
+V: 11 E: 0 M: 9 P: 0
+V: 8 E: 0 M: 11 P: 0
+V: 7 E: 0 M: 15 P: 0
+V: 8 E: 0 M: 13 P: 0
+V: 9 E: 0 M: 12 P: 0
+V: 10 E: 0 M: 10 P: 0
+V: 12 E: 0 M: 13 P: 0

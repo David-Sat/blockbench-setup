@@ -197,17 +197,17 @@ zipfian_function()
 # ./workloads.sh -b ycsb -T 16 -t 100 -o dist5 -s 300
 
 
-./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb1 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb2 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb3 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb4 -s 300 -w workloada.spec
-./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb5 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb1 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb2 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb3 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb4 -s 300 -w workloada.spec
+# ./msgrange.sh -b ycsb -T 16 -o 2msgrange_ycsb5 -s 300 -w workloada.spec
 
-./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank1 -s 300 -n 10000000 -f stat.txt
-./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank2 -s 300 -n 10000000 -f stat.txt
-./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank3 -s 300 -n 10000000 -f stat.txt
-./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank4 -s 300 -n 10000000 -f stat.txt
-./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank5 -s 300 -n 10000000 -f stat.txt
+# ./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank1 -s 300 -n 10000000 -f stat.txt
+# ./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank2 -s 300 -n 10000000 -f stat.txt
+# ./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank3 -s 300 -n 10000000 -f stat.txt
+# ./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank4 -s 300 -n 10000000 -f stat.txt
+# ./msgrange.sh -b smallbank -T 16 -o 2msgrange_smallbank5 -s 300 -n 10000000 -f stat.txt
 
 # ./msgrange.sh -b donothing -T 16 -o msgrange_donothing1 -s 300 -w rw_k.spec
 # ./msgrange.sh -b donothing -T 16 -o msgrange_donothing2 -s 300 -w rw_k.spec
@@ -226,6 +226,14 @@ zipfian_function()
 # make clean
 # make
 # cd $HOME/blockbench-setup/fabric2.2
+
+
+./solofabric.sh -b ycsb -t 100 -T 16 -o 1ycsb_sm -s 300 -w sm_workload.spec
+./solofabric.sh -b ycsb -t 100 -T 16 -o 2ycsb_sm -s 300 -w sm_workload.spec
+./solofabric.sh -b ycsb -t 100 -T 16 -o 3ycsb_sm -s 300 -w sm_workload.spec
+./solofabric.sh -b ycsb -t 100 -T 16 -o 4ycsb_sm -s 300 -w sm_workload.spec
+./solofabric.sh -b ycsb -t 100 -T 16 -o 5ycsb_sm -s 300 -w sm_workload.spec
+
 
 
 
